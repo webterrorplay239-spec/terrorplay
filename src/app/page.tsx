@@ -1,154 +1,96 @@
-"use client";
 
-import { useState, useMemo, useEffect } from 'react';
-import VideoCard from '@/components/VideoCard';
-import { mockVideos, categories as availableCategories } from '@/lib/data';
-import type { Video } from '@/lib/types';
-import { Input } from '@/components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Search, ListFilter, ArrowDownUp, XCircle } from 'lucide-react';
-import LoadingSpinner from '@/components/LoadingSpinner';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Zap, Ghost, MapPin, Ticket } from 'lucide-react';
 
-export default function VideoCatalogPage() {
-  const [videos, setVideos] = useState<Video[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [sortOrder, setSortOrder] = useState<string>('title-asc');
-
-  useEffect(() => {
-    // Simulate API call
-    setIsLoading(true);
-    setTimeout(() => {
-      setVideos(mockVideos);
-      setIsLoading(false);
-    }, 500);
-  }, []);
-
-  const filteredAndSortedVideos = useMemo(() => {
-    let filtered = videos;
-
-    if (searchTerm) {
-      filtered = filtered.filter(video =>
-        video.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        video.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
-      );
-    }
-
-    if (selectedCategory !== 'all') {
-      filtered = filtered.filter(video => video.category.toLowerCase() === selectedCategory.toLowerCase());
-    }
-
-    return filtered.sort((a, b) => {
-      switch (sortOrder) {
-        case 'title-asc':
-          return a.title.localeCompare(b.title);
-        case 'title-desc':
-          return b.title.localeCompare(a.title);
-        case 'date-asc':
-          return new Date(a.releaseDate || 0).getTime() - new Date(b.releaseDate || 0).getTime();
-        case 'date-desc':
-          return new Date(b.releaseDate || 0).getTime() - new Date(a.releaseDate || 0).getTime();
-        default:
-          return 0;
-      }
-    });
-  }, [videos, searchTerm, selectedCategory, sortOrder]);
-
-  const clearFilters = () => {
-    setSearchTerm('');
-    setSelectedCategory('all');
-    setSortOrder('title-asc');
-  };
-
-  if (isLoading) {
-    return (
-      <div className="flex justify-center items-center min-h-[calc(100vh-20rem)]">
-        <LoadingSpinner size={64} />
-      </div>
-    );
-  }
-
+export default function ElParquePage() {
   return (
-    <div className="space-y-12">
-      <section className="text-center animate-fade-in">
-        <h1 className="text-5xl md:text-7xl font-headline text-primary mb-4">Welcome to TerrorPlay</h1>
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-          Explore our curated collection of terrifying videos. Dare to watch?
+    <div className="space-y-16">
+      <section className="text-center animate-fade-in rounded-lg bg-card/50 shadow-xl p-8 md:p-12">
+        <h1 className="text-5xl md:text-7xl font-headline text-primary mb-6">
+          Bienvenido a Horrorland Sevilla
+        </h1>
+        <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          El epicentro del terror en el corazón de Andalucía. Sumérgete en un mundo donde tus peores pesadillas cobran vida. ¿Tienes el valor para enfrentarlas?
         </p>
+        <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg animate-pulse">
+          <Link href="/informacion#entradas">
+            <Ticket className="mr-2 h-5 w-5" /> ¡Compra tus Entradas!
+          </Link>
+        </Button>
       </section>
 
-      <section className="space-y-6 p-6 bg-card/50 rounded-lg shadow-xl animate-slide-up" style={{animationDelay: '0.2s'}}>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-end">
-          <div className="space-y-2">
-            <label htmlFor="search" className="text-sm font-medium text-muted-foreground">Search Videos</label>
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-              <Input
-                id="search"
-                type="text"
-                placeholder="Search by title or tag..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10"
-              />
-            </div>
-          </div>
-
-          <div className="space-y-2">
-            <label htmlFor="category" className="text-sm font-medium text-muted-foreground">Filter by Category</label>
-            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-              <SelectTrigger id="category" className="w-full">
-                <ListFilter className="h-4 w-4 mr-2 text-muted-foreground inline-block" />
-                <SelectValue placeholder="Select category" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Categories</SelectItem>
-                {availableCategories.map(cat => (
-                  <SelectItem key={cat.id} value={cat.name.toLowerCase()}>{cat.name}</SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-          
-          <div className="space-y-2">
-            <label htmlFor="sort" className="text-sm font-medium text-muted-foreground">Sort By</label>
-            <Select value={sortOrder} onValueChange={setSortOrder}>
-              <SelectTrigger id="sort" className="w-full">
-                <ArrowDownUp className="h-4 w-4 mr-2 text-muted-foreground inline-block" />
-                <SelectValue placeholder="Sort order" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="title-asc">Title (A-Z)</SelectItem>
-                <SelectItem value="title-desc">Title (Z-A)</SelectItem>
-                <SelectItem value="date-desc">Newest First</SelectItem>
-                <SelectItem value="date-asc">Oldest First</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
+      <section className="space-y-8 animate-slide-up" style={{animationDelay: '0.2s'}}>
+        <h2 className="text-4xl font-headline text-center text-primary mb-8">Descubre el Parque</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <FeatureCard
+            icon={<Ghost className="h-10 w-10 text-accent" />}
+            title="Atracciones Escalofriantes"
+            description="Desde casas encantadas hasta montañas rusas que desafían la gravedad y tus nervios. Cada rincón esconde un nuevo grito."
+            link="/atracciones"
+            linkText="Ver Atracciones"
+          />
+          <FeatureCard
+            icon={<Zap className="h-10 w-10 text-accent" />}
+            title="Experiencias Inmersivas"
+            description="Participa en historias interactivas, resuelve misterios y escapa de situaciones límite. Tú eres el protagonista de la pesadilla."
+            link="/experiencias"
+            linkText="Explorar Experiencias"
+          />
+          <FeatureCard
+            icon={<MapPin className="h-10 w-10 text-accent" />}
+            title="Zonas Temáticas Únicas"
+            description="Explora mundos detalladamente recreados que te transportarán a diferentes universos de terror. Cuidado por dónde pisas."
+            linkText="Próximamente Más Info"
+          />
         </div>
-        {(searchTerm || selectedCategory !== 'all') && (
-          <Button variant="outline" onClick={clearFilters} className="w-full md:w-auto">
-            <XCircle className="mr-2 h-4 w-4" /> Clear Filters
-          </Button>
-        )}
       </section>
-
-      {filteredAndSortedVideos.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 animate-fade-in" style={{animationDelay: '0.4s'}}>
-          {filteredAndSortedVideos.map((video, index) => (
-            <VideoCard key={video.id} video={video} />
-          ))}
-        </div>
-      ) : (
-        <div className="text-center py-12 animate-fade-in">
-          <h2 className="text-2xl font-headline text-muted-foreground mb-2">No Videos Found</h2>
-          <p className="text-lg text-muted-foreground">
-            Try adjusting your search or filters. The horror awaits... if you can find it.
+      
+      <section className="text-center bg-card/30 p-8 rounded-lg shadow-lg animate-fade-in" style={{animationDelay: '0.4s'}}>
+          <h3 className="text-3xl font-headline text-primary mb-4">¿Listo para el Terror?</h3>
+          <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+            Horrorland Sevilla te espera con las puertas abiertas... y las criaturas acechando.
+            Consulta nuestros horarios y planifica tu visita.
           </p>
-        </div>
-      )}
+          <Button variant="outline" asChild>
+            <Link href="/informacion">
+              Horarios y Cómo Llegar
+            </Link>
+          </Button>
+      </section>
     </div>
+  );
+}
+
+interface FeatureCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  link?: string;
+  linkText: string;
+}
+
+function FeatureCard({ icon, title, description, link, linkText }: FeatureCardProps) {
+  return (
+    <Card className="text-center hover:shadow-primary/20 transition-shadow duration-300">
+      <CardHeader className="items-center">
+        <div className="p-4 bg-accent/10 rounded-full mb-4">
+          {icon}
+        </div>
+        <CardTitle className="font-headline text-2xl">{title}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p className="text-muted-foreground mb-6">{description}</p>
+        {link ? (
+          <Button asChild variant="ghost" className="text-accent hover:text-accent-foreground hover:bg-accent/20">
+            <Link href={link}>{linkText}</Link>
+          </Button>
+        ) : (
+           <p className="text-sm text-muted-foreground italic">{linkText}</p>
+        )}
+      </CardContent>
+    </Card>
   );
 }

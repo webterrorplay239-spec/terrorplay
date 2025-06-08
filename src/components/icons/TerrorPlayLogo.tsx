@@ -1,11 +1,12 @@
+
 import type React from 'react';
 
-const TerrorPlayLogo: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+const HorrorlandSevillaLogo: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 200 50"
+    viewBox="0 0 270 50" // Adjusted viewBox for longer text
     className="font-headline"
-    aria-label="TerrorPlay Logo"
+    aria-label="Horrorland Sevilla Logo"
     {...props}
   >
     <defs>
@@ -19,14 +20,14 @@ const TerrorPlayLogo: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
       y="50%"
       dominantBaseline="middle"
       textAnchor="middle"
-      fontSize="38"
+      fontSize="28" // Adjusted font size
       fill="url(#logoGradient)"
       className="font-headline tracking-wider"
       style={{ filter: "drop-shadow(2px 2px 3px rgba(0,0,0,0.5))" }}
     >
-      TERRORPLAY
+      HORRORLAND SEVILLA
     </text>
   </svg>
 );
 
-export default TerrorPlayLogo;
+export default HorrorlandSevillaLogo;

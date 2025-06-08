@@ -1,20 +1,22 @@
+
 import type { LucideIcon } from 'lucide-react';
 
-export interface Video {
+export interface Attraction {
   id: string;
   title: string;
   description: string;
   thumbnailUrl: string;
-  videoUrl: string; // embed URL or link to video page
-  category: string; 
+  category: string; // e.g., 'Casa del Terror', 'Montaña Rusa', 'Espectáculo'
   tags: string[];
-  duration?: string;
-  releaseDate?: string; // YYYY-MM-DD
+  intensity?: 'Baja' | 'Media' | 'Alta' | 'Para todos';
+  minHeight?: string; // e.g., "1.20m"
+  duration?: string; // e.g., "25 mins", "Todo el día"
+  moreInfoUrl?: string; // Link to a dedicated page or section for the attraction
 }
 
 export interface CategoryInfo {
   id: string;
   name: string;
   icon: LucideIcon | React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  dataAiHint?: string; // For placeholder images if category images are used
+  dataAiHint?: string;
 }
