@@ -4,6 +4,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 export const metadata: Metadata = {
   title: 'TerrorPlay - Eventos de Terror a Medida',
@@ -30,6 +31,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <WhatsAppButton phoneNumber="+34000000000" message="Hola! Me gustaría pedir presupuesto para un evento de terror." />
       </body>
     </html>
   );

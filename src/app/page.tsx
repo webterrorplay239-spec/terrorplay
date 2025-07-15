@@ -4,22 +4,14 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, PartyPopper, CalendarCheck, MessageSquareQuote } from 'lucide-react';
+import { ParallaxBanner } from '@/components/ParallaxBanner';
 
 export default function HomePage() {
   return (
     <div className="space-y-20 md:space-y-28">
       {/* Hero Section */}
-      <section className="relative text-center animate-fade-in h-[60vh] flex flex-col justify-center items-center rounded-lg overflow-hidden p-8">
-         <div className="absolute inset-0 bg-black/60 z-10" />
-         <Image 
-            src="https://placehold.co/1200x800.png"
-            layout="fill"
-            objectFit="cover"
-            alt="Evento de terror"
-            className="z-0"
-            data-ai-hint="dark atmospheric horror"
-          />
-        <div className="relative z-20">
+      <ParallaxBanner imageUrl="https://placehold.co/1200x800.png" dataAiHint="dark atmospheric horror">
+        <div className="relative z-20 text-center flex flex-col items-center justify-center h-full bg-black/60 p-8">
             <h1 className="text-5xl md:text-7xl font-headline text-primary mb-6 drop-shadow-lg">
               Creamos Eventos de Terror Inolvidables
             </h1>
@@ -32,7 +24,7 @@ export default function HomePage() {
               </Link>
             </Button>
         </div>
-      </section>
+      </ParallaxBanner>
 
       {/* How it Works Section */}
       <section className="space-y-8 text-center">
