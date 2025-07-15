@@ -40,9 +40,8 @@ export default function EventosPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 space-y-12">
       <section className="text-center animate-fade-in relative overflow-hidden rounded-lg p-4">
-        <div className="absolute inset-0 bg-primary/10 animate-static-noise -z-10"></div>
         <Clapperboard className="h-16 w-16 text-primary mx-auto mb-4" />
-        <h1 className="text-5xl md:text-7xl font-headline text-primary mb-4">Nuestros Eventos de Terror</h1>
+        <h1 className="text-5xl md:text-7xl font-headline text-primary mb-4 animate-text-flicker">Nuestros Eventos de Terror</h1>
         <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
           Desde sustos y adrenalina hasta misterios y tensión. Explora los tipos de experiencias que podemos crear para ti.
         </p>

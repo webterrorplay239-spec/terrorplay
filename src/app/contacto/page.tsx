@@ -52,9 +52,8 @@ export default function ContactoPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 space-y-12">
        <section className="text-center animate-fade-in relative overflow-hidden rounded-lg p-4">
-        <div className="absolute inset-0 bg-primary/10 animate-static-noise -z-10"></div>
         <Mail className="h-16 w-16 text-primary mx-auto mb-4" />
-        <h1 className="text-5xl md:text-7xl font-headline text-primary mb-4">Contacta con Nosotros</h1>
+        <h1 className="text-5xl md:text-7xl font-headline text-primary mb-4 animate-text-flicker">Contacta con Nosotros</h1>
         <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
           ¿Listo para planificar tu próximo evento de terror? Rellena el formulario y cuéntanos tu idea.
         </p>
