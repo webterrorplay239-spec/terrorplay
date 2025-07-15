@@ -28,14 +28,14 @@ export function ParallaxBanner({ imageUrl, dataAiHint, children }: ParallaxBanne
 
   return (
     <section 
-      className="relative h-[60vh] rounded-lg overflow-hidden"
+      className="relative h-screen w-full overflow-hidden"
       data-ai-hint={dataAiHint}
     >
       <div
         className="absolute inset-0 bg-cover bg-fixed bg-center z-0"
         style={{ 
             backgroundImage: `url(${imageUrl})`,
-            transform: `translateY(${offsetY * 0.3}px)` // Adjust multiplier for parallax speed
+            transform: `translateY(${offsetY * 0.4}px)` // Adjust multiplier for parallax speed
         }}
         aria-hidden="true"
       />
