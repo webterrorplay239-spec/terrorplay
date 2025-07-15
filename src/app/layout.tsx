@@ -25,13 +25,13 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body bg-background text-foreground antialiased flex flex-col min-h-screen">
-        <Toaster />
         <Header />
         <main className="flex-grow">
           {children}
         </main>
         <Footer />
         <WhatsAppButton phoneNumber="+34000000000" message="Hola! Me gustaría pedir presupuesto para un evento de terror." />
+        <Toaster />
       </body>
     </html>
   );

@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Clapperboard, Puzzle, Drama } from 'lucide-react';
+import { Clapperboard, Puzzle, Drama, Skull } from 'lucide-react';
 
 const eventServices = [
   {
@@ -28,7 +28,7 @@ const eventServices = [
     imageHint: "mystery dinner scene"
   },
    {
-    icon: Clapperboard,
+    icon: Skull,
     title: "Real Games y Supervivencia Zombie",
     description: "Eventos a gran escala en pueblos, fincas o recintos grandes. Los participantes deben sobrevivir, cumplir misiones y evitar a las hordas de zombies o criaturas que hemos preparado para ellos. Pura adrenalina.",
     imageSrc: "https://placehold.co/600x400.png",
@@ -38,7 +38,7 @@ const eventServices = [
 
 export default function EventosPage() {
   return (
-    <div className="space-y-12">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 space-y-12">
       <section className="text-center animate-fade-in">
         <Clapperboard className="h-16 w-16 text-primary mx-auto mb-4" />
         <h1 className="text-5xl md:text-7xl font-headline text-primary mb-4">Nuestros Eventos de Terror</h1>
@@ -49,7 +49,7 @@ export default function EventosPage() {
 
       <section className="space-y-8">
         {eventServices.map((service, index) => (
-          <Card key={service.title} className="overflow-hidden animate-slide-up" style={{animationDelay: `${index * 0.1}s`}}>
+          <Card key={service.title} className="overflow-hidden animate-slide-up bg-card/50" style={{animationDelay: `${index * 0.1}s`}}>
             <div className="grid md:grid-cols-5 md:gap-6 items-center">
               <div className="md:col-span-2">
                  <Image 

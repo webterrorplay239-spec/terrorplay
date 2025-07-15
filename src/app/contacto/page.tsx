@@ -50,7 +50,7 @@ export default function ContactoPage() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto space-y-12">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 space-y-12">
        <section className="text-center animate-fade-in">
         <Mail className="h-16 w-16 text-primary mx-auto mb-4" />
         <h1 className="text-5xl md:text-7xl font-headline text-primary mb-4">Contacta con Nosotros</h1>
@@ -59,90 +59,91 @@ export default function ContactoPage() {
         </p>
       </section>
 
-      <Card className="shadow-2xl shadow-primary/20 animate-slide-up">
+      <Card className="shadow-2xl shadow-primary/20 animate-slide-up max-w-2xl mx-auto">
         <CardHeader>
           <CardTitle className="font-headline text-2xl">Solicita tu Presupuesto</CardTitle>
           <CardDescription>Nos pondremos en contacto contigo para dar forma a tu pesadilla ideal.</CardDescription>
         </CardHeader>
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="p-6 space-y-6">
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Nombre</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Tu nombre completo" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input type="email" placeholder="tu.email@ejemplo.com" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-             <FormField
-                control={form.control}
-                name="eventType"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Tipo de Evento</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+        <CardContent>
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Nombre</FormLabel>
                       <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="¿Qué tipo de evento te interesa?" />
-                        </SelectTrigger>
+                        <Input placeholder="Tu nombre completo" {...field} />
                       </FormControl>
-                      <SelectContent>
-                        <SelectItem value="pasaje-terror">Pasaje del Terror</SelectItem>
-                        <SelectItem value="escape-room">Escape Room</SelectItem>
-                        <SelectItem value="cena-misterio">Cena de Misterio / Cluedo</SelectItem>
-                        <SelectItem value="otro">Otro tipo de evento</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Tu Mensaje</FormLabel>
-                  <FormControl>
-                    <Textarea
-                      placeholder="Cuéntanos un poco sobre tu idea: fecha aproximada, número de personas, localización, y cualquier detalle que se te ocurra."
-                      className="min-h-[120px] resize-none"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Button type="submit" disabled={form.formState.isSubmitting} className="w-full">
-              {form.formState.isSubmitting ? 'Enviando...' : (
-                <>
-                  <Send className="mr-2 h-4 w-4" /> Enviar Petición
-                </>
-              )}
-            </Button>
-          </form>
-        </Form>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input type="email" placeholder="tu.email@ejemplo.com" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                 <FormField
+                    control={form.control}
+                    name="eventType"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Tipo de Evento</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger>
+                              <SelectValue placeholder="¿Qué tipo de evento te interesa?" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="pasaje-terror">Pasaje del Terror</SelectItem>
+                            <SelectItem value="escape-room">Escape Room</SelectItem>
+                            <SelectItem value="cena-misterio">Cena de Misterio / Cluedo</SelectItem>
+                            <SelectItem value="otro">Otro tipo de evento</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Tu Mensaje</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Cuéntanos un poco sobre tu idea: fecha aproximada, número de personas, localización, y cualquier detalle que se te ocurra."
+                          className="min-h-[120px] resize-none"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <Button type="submit" disabled={form.formState.isSubmitting} className="w-full">
+                  {form.formState.isSubmitting ? 'Enviando...' : (
+                    <>
+                      <Send className="mr-2 h-4 w-4" /> Enviar Petición
+                    </>
+                  )}
+                </Button>
+              </form>
+            </Form>
+        </CardContent>
       </Card>
     </div>
   );
 }
-

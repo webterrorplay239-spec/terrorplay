@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, PartyPopper, CalendarCheck, MessageSquareQuote } from 'lucide-react';
+import { CheckCircle, PartyPopper, CalendarCheck, MessageSquareQuote, Skull } from 'lucide-react';
 import { ParallaxBanner } from '@/components/ParallaxBanner';
 import NeonLogo from '@/components/icons/NeonLogo';
 
@@ -36,17 +36,17 @@ export default function HomePage() {
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Nuestro proceso para garantizar que tu evento sea terroríficamente perfecto.</p>
         <div className="grid md:grid-cols-3 gap-8 pt-12">
           <HowItWorksStep
-            icon={<CheckCircle className="h-12 w-12 text-accent" />}
+            icon={<MessageSquareQuote className="h-12 w-12 text-accent" />}
             title="1. Cuéntanos tu Idea"
             description="Contactas con nosotros y nos explicas qué tipo de evento de terror tienes en mente. ¿Quieres sustos, misterio, o ambos?"
           />
           <HowItWorksStep
-            icon={<PartyPopper className="h-12 w-12 text-accent" />}
+            icon={<Skull className="h-12 w-12 text-accent" />}
             title="2. Diseño a Medida"
             description="Nuestro equipo de creativos diseña una experiencia única para ti, adaptando la historia, los actores y la ambientación a tus necesidades."
           />
           <HowItWorksStep
-            icon={<CalendarCheck className="h-12 w-12 text-accent" />}
+            icon={<PartyPopper className="h-12 w-12 text-accent" />}
             title="3. Ejecución Impecable"
             description="Llevamos el terror donde nos pidas. Nos encargamos de todo el montaje, los actores y la producción para que solo te preocupes de gritar."
           />
