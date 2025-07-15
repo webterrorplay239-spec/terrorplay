@@ -6,8 +6,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Horrorland Sevilla',
-  description: 'El parque de atracciones de terror en Sevilla. Atrévete a entrar.',
+  title: 'TerrorPlay - Eventos de Terror a Medida',
+  description: 'Creamos experiencias de terror inolvidables. Eventos personalizados para empresas y particulares.',
 };
 
 export default function RootLayout({
@@ -26,7 +26,7 @@ export default function RootLayout({
       <body className="font-body bg-background text-foreground antialiased flex flex-col min-h-screen">
         <Toaster />
         <Header />
-        <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
           {children}
         </main>
         <Footer />
