@@ -6,7 +6,8 @@ import { Users, Heart, Target } from 'lucide-react';
 export default function QuienesSomosPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 space-y-12">
-      <section className="text-center animate-fade-in">
+      <section className="text-center animate-fade-in relative overflow-hidden rounded-lg p-4">
+        <div className="absolute inset-0 bg-primary/10 animate-static-noise -z-10"></div>
         <Users className="h-16 w-16 text-primary mx-auto mb-4" />
         <h1 className="text-5xl md:text-7xl font-headline text-primary mb-4">Quiénes Somos</h1>
         <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
@@ -14,7 +15,7 @@ export default function QuienesSomosPage() {
         </p>
       </section>
 
-      <section className="grid md:grid-cols-2 gap-8 items-center animate-slide-up">
+      <section className="grid md:grid-cols-2 gap-8 items-center animate-slide-up bg-scratches p-6 rounded-lg">
         <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
           <Image
             src="https://placehold.co/600x800.png"
@@ -36,7 +37,7 @@ export default function QuienesSomosPage() {
       </section>
 
       <section className="grid md:grid-cols-2 gap-8 text-left">
-          <Card>
+          <Card className="bg-scratches">
             <CardHeader>
               <CardTitle className="flex items-center text-2xl font-headline text-primary">
                 <Target className="h-7 w-7 mr-3 text-accent" />
@@ -49,7 +50,7 @@ export default function QuienesSomosPage() {
               </p>
             </CardContent>
           </Card>
-           <Card>
+           <Card className="bg-scratches">
             <CardHeader>
               <CardTitle className="flex items-center text-2xl font-headline text-primary">
                 <Heart className="h-7 w-7 mr-3 text-accent" />

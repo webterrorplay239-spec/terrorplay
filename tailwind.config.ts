@@ -102,6 +102,18 @@ export default {
         slideUp: {
           '0%': { transform: 'translateY(20px)', opacity: '0'},
           '100%': { transform: 'translateY(0)', opacity: '1'},
+        },
+        'static-noise': {
+          '0%, 100%': { transform: 'translate(0, 0)' },
+          '10%': { transform: 'translate(-5%, -10%)' },
+          '20%': { transform: 'translate(-15%, 5%)' },
+          '30%': { transform: 'translate(7%, -25%)' },
+          '40%': { transform: 'translate(-5%, 25%)' },
+          '50%': { transform: 'translate(-15%, 10%)' },
+          '60%': { transform: 'translate(15%, 0%)' },
+          '70%': { transform: 'translate(0%, 15%)' },
+          '80%': { transform: 'translate(3%, 35%)' },
+          '90%': { transform: 'translate(-10%, 10%)' },
         }
       },
       animation: {
@@ -109,7 +121,11 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'fade-in': 'fadeIn 0.5s ease-out',
         'slide-up': 'slideUp 0.5s ease-out forwards',
+        'static-noise': 'static-noise 0.2s linear infinite',
       },
+      backgroundImage: {
+        'scratches': "repeating-linear-gradient(45deg, transparent, transparent 10px, hsla(0,0%,0%,.1) 10px, hsla(0,0%,0%,.1) 12px), repeating-linear-gradient(135deg, transparent, transparent 5px, hsla(0,0%,0%,.05) 5px, hsla(0,0%,0%,.05) 7px), radial-gradient(circle at 10% 20%, hsl(var(--primary) / 0.1), transparent 20%), radial-gradient(circle at 80% 50%, hsl(var(--primary) / 0.08), transparent 25%)",
+      }
     },
   },
   plugins: [require('tailwindcss-animate')],

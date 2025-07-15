@@ -31,9 +31,12 @@ export default function HomePage() {
       <SectionDivider />
 
       {/* How it Works Section */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
-        <h2 className="text-4xl font-headline text-center text-primary">Cómo lo Hacemos</h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Nuestro proceso para garantizar que tu evento sea terroríficamente perfecto.</p>
+      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center bg-scratches rounded-lg">
+        <div className="relative">
+          <div className="absolute -inset-8 bg-accent/5 animate-static-noise opacity-30 -z-10"></div>
+          <h2 className="text-4xl font-headline text-center text-primary">Cómo lo Hacemos</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Nuestro proceso para garantizar que tu evento sea terroríficamente perfecto.</p>
+        </div>
         <div className="grid md:grid-cols-3 gap-8 pt-12">
           <HowItWorksStep
             icon={<MessageSquareQuote className="h-12 w-12 text-accent" />}
@@ -57,8 +60,11 @@ export default function HomePage() {
 
       {/* Our Events Section */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
-        <h2 className="text-4xl font-headline text-center text-primary">Nuestros Eventos</h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Creamos todo tipo de experiencias de terror. Aquí tienes algunos ejemplos.</p>
+        <div className="relative">
+            <div className="absolute -inset-8 bg-primary/5 animate-static-noise opacity-30 -z-10"></div>
+            <h2 className="text-4xl font-headline text-center text-primary">Nuestros Eventos</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Creamos todo tipo de experiencias de terror. Aquí tienes algunos ejemplos.</p>
+        </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-12">
           <EventCard
             imageSrc="https://placehold.co/600x400.png"
@@ -90,7 +96,10 @@ export default function HomePage() {
 
       {/* Testimonials Section */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
-        <h2 className="text-4xl font-headline text-center text-primary">Opiniones de Nuestros Clientes</h2>
+         <div className="relative">
+             <div className="absolute -inset-8 bg-accent/5 animate-static-noise opacity-30 -z-10"></div>
+            <h2 className="text-4xl font-headline text-center text-primary">Opiniones de Nuestros Clientes</h2>
+         </div>
          <div className="grid md:grid-cols-2 gap-8 pt-12 max-w-4xl mx-auto">
             <TestimonialCard
               quote="¡Increíble! Montaron un pasaje del terror para nuestra fiesta de Halloween y fue un éxito rotundo. Los actores eran de 10."
@@ -106,7 +115,7 @@ export default function HomePage() {
       <SectionDivider />
 
       {/* Final CTA Section */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center bg-card/30 my-12 rounded-lg shadow-xl">
+      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center bg-scratches my-12 rounded-lg shadow-xl">
           <h3 className="text-3xl font-headline text-primary mb-4">¿Hablamos de tu Próximo Evento?</h3>
           <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
             Estamos listos para hacer realidad tus pesadillas. Contacta con nosotros y pide un presupuesto sin compromiso.
@@ -158,7 +167,7 @@ interface EventCardProps {
 
 function EventCard({ imageSrc, imageHint, title, description }: EventCardProps) {
   return (
-    <Card className="text-left overflow-hidden transform transition-transform hover:scale-105 duration-300 bg-card/50 border-border/50">
+    <Card className="text-left overflow-hidden transform transition-transform hover:scale-105 duration-300 bg-scratches border-border/50">
        <Image 
           src={imageSrc}
           width={600}
@@ -184,7 +193,7 @@ interface TestimonialCardProps {
 
 function TestimonialCard({ quote, author }: TestimonialCardProps) {
     return (
-        <Card className="bg-card/50 p-6 text-left border-border/50">
+        <Card className="bg-scratches p-6 text-left border-border/50">
             <CardContent className="p-0 space-y-4">
                 <MessageSquareQuote className="w-8 h-8 text-accent" />
                 <blockquote className="text-lg italic border-l-4 border-accent pl-4">

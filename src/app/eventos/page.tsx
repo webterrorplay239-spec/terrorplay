@@ -39,7 +39,8 @@ const eventServices = [
 export default function EventosPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 space-y-12">
-      <section className="text-center animate-fade-in">
+      <section className="text-center animate-fade-in relative overflow-hidden rounded-lg p-4">
+        <div className="absolute inset-0 bg-primary/10 animate-static-noise -z-10"></div>
         <Clapperboard className="h-16 w-16 text-primary mx-auto mb-4" />
         <h1 className="text-5xl md:text-7xl font-headline text-primary mb-4">Nuestros Eventos de Terror</h1>
         <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
@@ -49,7 +50,7 @@ export default function EventosPage() {
 
       <section className="space-y-8">
         {eventServices.map((service, index) => (
-          <Card key={service.title} className="overflow-hidden animate-slide-up bg-card/50" style={{animationDelay: `${index * 0.1}s`}}>
+          <Card key={service.title} className="overflow-hidden animate-slide-up bg-scratches" style={{animationDelay: `${index * 0.1}s`}}>
             <div className="grid md:grid-cols-5 md:gap-6 items-center">
               <div className="md:col-span-2">
                  <Image 
