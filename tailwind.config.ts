@@ -104,9 +104,17 @@ export default {
           '100%': { transform: 'translateY(0)', opacity: '1'},
         },
         'text-flicker': {
-          '0%, 100%': { opacity: '1', transform: 'none', filter: 'none' },
-          '33%': { opacity: '0.8', transform: 'translateX(-2px) skewX(5deg)', filter: 'blur(0.5px)' },
-          '66%': { opacity: '0.9', transform: 'translateX(2px) skewX(-2deg)', filter: 'blur(0px)' },
+            '0%': { transform: 'skewX(0deg) translateX(0)', opacity: '1' },
+            '5%': { transform: 'skewX(5deg) translateX(-2px)', opacity: '0.85' },
+            '10%': { transform: 'skewX(-5deg) translateX(2px)', opacity: '0.9' },
+            '15%': { transform: 'skewX(0deg) translateX(0)', opacity: '1' },
+            '20%': { transform: 'skewX(2deg) translateX(1px)', opacity: '0.95' },
+            '25%': { transform: 'skewX(-2deg) translateX(-1px)', opacity: '1' },
+            '50%': { transform: 'skewX(0deg) translateX(0)', opacity: '1' },
+            '51%': { transform: 'skewX(8deg) translateX(-5px)', opacity: '0.7' },
+            '52%': { transform: 'skewX(-8deg) translateX(5px)', opacity: '0.8' },
+            '53%': { transform: 'skewX(0deg) translateX(0)', opacity: '1' },
+            '100%': { transform: 'skewX(0deg) translateX(0)', opacity: '1' },
         }
       },
       animation: {
@@ -114,7 +122,7 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'fade-in': 'fadeIn 0.5s ease-out',
         'slide-up': 'slideUp 0.5s ease-out forwards',
-        'text-flicker': 'text-flicker 2s linear infinite',
+        'text-flicker': 'text-flicker 3s linear infinite',
       },
       backgroundImage: {
         'scratches': "repeating-linear-gradient(45deg, transparent, transparent 10px, hsla(0,0%,0%,.1) 10px, hsla(0,0%,0%,.1) 12px), repeating-linear-gradient(135deg, transparent, transparent 5px, hsla(0,0%,0%,.05) 5px, hsla(0,0%,0%,.05) 7px), radial-gradient(circle at 10% 20%, hsl(var(--primary) / 0.1), transparent 20%), radial-gradient(circle at 80% 50%, hsl(var(--primary) / 0.08), transparent 25%)",
