@@ -11,6 +11,16 @@ export const metadata: Metadata = {
   description: 'Creamos experiencias de terror inolvidables. Eventos personalizados para empresas y particulares.',
 };
 
+const SmokeEffect = () => (
+    <div className="smoke-container">
+        <div className="smoke-element s1"></div>
+        <div className="smoke-element s2"></div>
+        <div className="smoke-element s3"></div>
+        <div className="smoke-element s4"></div>
+        <div className="smoke-element s5"></div>
+    </div>
+);
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,6 +39,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <SmokeEffect />
         <WhatsAppButton phoneNumber="+34000000000" message="Hola! Me gustaría pedir presupuesto para un evento de terror." />
         <Toaster />
       </body>

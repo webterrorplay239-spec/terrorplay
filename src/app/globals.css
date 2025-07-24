@@ -126,3 +126,65 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--accent));
 }
+
+@keyframes smoke-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.9);
+  }
+  10% {
+    opacity: 0.1;
+  }
+  90% {
+    opacity: 0.05;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-200px) scale(1.1);
+  }
+}
+
+.smoke-container {
+  position: fixed;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  pointer-events: none;
+  z-index: 50;
+  overflow: hidden;
+}
+
+.smoke-element {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 100%, hsla(0, 0%, 13%, 0.4) 10%, transparent 40%);
+  animation: smoke-rise 20s linear infinite;
+}
+
+.smoke-element.s1 {
+  animation-delay: 0s;
+  left: 10%;
+}
+.smoke-element.s2 {
+  animation-delay: 4s;
+  left: 40%;
+  transform: scale(0.8);
+}
+.smoke-element.s3 {
+  animation-delay: 8s;
+  left: 70%;
+   transform: scale(0.9);
+}
+.smoke-element.s4 {
+  animation-delay: 12s;
+  left: -20%;
+  transform: scale(0.7);
+}
+.smoke-element.s5 {
+  animation-delay: 16s;
+  left: 50%;
+}
