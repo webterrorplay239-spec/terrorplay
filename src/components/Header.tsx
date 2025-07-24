@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Calendar, Users, Mail, Menu, ChevronDown, Clapperboard, Puzzle, Drama, Ticket } from 'lucide-react';
 import TerrorPlayLogo from './icons/TerrorPlayLogo';
 import { Button } from './ui/button';
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from './ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from './ui/sheet';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -86,6 +86,9 @@ export default function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right">
+                <SheetHeader>
+                    <SheetTitle className="sr-only">Menú de Navegación</SheetTitle>
+                </SheetHeader>
                 <nav className="flex flex-col space-y-2 mt-8">
                    <Button onClick={() => {
                      // Close sheet before opening modal
