@@ -1,6 +1,8 @@
 
+"use client";
+
 import Link from 'next/link';
-import { Calendar, Users, Mail, Menu, ChevronDown, Clapperboard, Puzzle, Drama } from 'lucide-react';
+import { Calendar, Users, Mail, Menu, ChevronDown, Clapperboard, Puzzle, Drama, Ticket } from 'lucide-react';
 import TerrorPlayLogo from './icons/TerrorPlayLogo';
 import { Button } from './ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from './ui/sheet';
@@ -11,6 +13,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion';
+import TicketPurchaseDialog from './TicketPurchaseDialog';
+import { useState } from 'react';
 
 
 const mainNavItems = [
@@ -25,7 +29,10 @@ const eventNavItems = [
 ];
 
 export default function Header() {
+  const [isTicketModalOpen, setTicketModalOpen] = useState(false);
+  
   return (
+    <>
     <header className="bg-card/80 backdrop-blur-md shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -63,8 +70,9 @@ export default function Header() {
                 </Link>
               </Button>
             ))}
-            <Button asChild className="ml-4 bg-primary hover:bg-primary/90 text-primary-foreground">
-              <Link href="/contacto">Solicita Presupuesto</Link>
+            <Button onClick={() => setTicketModalOpen(true)} className="ml-4 bg-primary hover:bg-primary/90 text-primary-foreground">
+              <Ticket className="h-5 w-5 mr-2" />
+              Compra tus Entradas
             </Button>
           </nav>
 
@@ -79,6 +87,15 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent side="right">
                 <nav className="flex flex-col space-y-2 mt-8">
+                   <Button onClick={() => {
+                     // Close sheet before opening modal
+                     const closeButton = document.querySelector('[data-radix-dialog-close]');
+                     if (closeButton instanceof HTMLElement) closeButton.click();
+                     setTicketModalOpen(true)
+                    }} className="mb-4 bg-primary hover:bg-primary/90 text-primary-foreground">
+                      <Ticket className="h-5 w-5 mr-2" />
+                      Compra tus Entradas
+                   </Button>
                   <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="eventos" className="border-b-0">
                       <AccordionTrigger className="hover:no-underline text-lg">
@@ -108,7 +125,7 @@ export default function Header() {
                        </Link>
                     </SheetClose>
                   ))}
-                  <Button asChild className="mt-6 bg-primary hover:bg-primary/90 text-primary-foreground">
+                  <Button asChild className="mt-6 bg-accent hover:bg-accent/90 text-accent-foreground">
                      <SheetClose asChild>
                         <Link href="/contacto">Solicita Presupuesto</Link>
                      </SheetClose>
@@ -120,5 +137,7 @@ export default function Header() {
         </div>
       </div>
     </header>
+    <TicketPurchaseDialog isOpen={isTicketModalOpen} onOpenChange={setTicketModalOpen} />
+    </>
   );
 }
