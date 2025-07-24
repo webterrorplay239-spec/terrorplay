@@ -20,7 +20,7 @@ export default {
       fontFamily: {
         body: ['Creepster', 'cursive'],
         headline: ['Belleza', 'sans-serif'],
-        code: ['monospace', 'monospace'], // Added fallback for code
+        code: ['monospace', 'monospace'],
       },
       colors: {
         background: 'hsl(var(--background))',

@@ -91,9 +91,8 @@ export default function Header() {
                 </SheetHeader>
                 <nav className="flex flex-col space-y-2 mt-8">
                    <Button onClick={() => {
-                     // Close sheet before opening modal
-                     const closeButton = document.querySelector('[data-radix-dialog-close]');
-                     if (closeButton instanceof HTMLElement) closeButton.click();
+                     const closeButton = document.querySelector<HTMLButtonElement>('[data-radix-dialog-close]');
+                     if (closeButton) closeButton.click();
                      setTicketModalOpen(true)
                     }} className="mb-4 bg-primary hover:bg-primary/90 text-primary-foreground">
                       <Ticket className="h-5 w-5 mr-2" />
