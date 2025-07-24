@@ -131,8 +131,8 @@ function SectionDivider() {
              <div className="absolute inset-0 bg-gradient-to-b from-background to-transparent z-10"></div>
              <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10"></div>
             <svg className="absolute inset-0 w-full h-full text-primary" viewBox="0 0 100 10" preserveAspectRatio="none">
-                <path d="M0 5 Q 25 10, 50 5 T 100 5" stroke="currentColor" strokeWidth="0.2" fill="none" />
-                 <path d="M0 6 Q 25 0, 50 6 T 100 6" stroke="hsl(var(--accent))" strokeWidth="0.1" fill="none" opacity="0.5" />
+                <path d="M0 5 Q 15 10, 30 5 T 70 5 Q 85 10, 100 5" stroke="currentColor" strokeWidth="0.2" fill="none" />
+                 <path d="M0 6 Q 20 0, 45 6 T 100 6" stroke="hsl(var(--accent))" strokeWidth="0.1" fill="none" opacity="0.5" />
             </svg>
         </div>
     )
@@ -164,15 +164,18 @@ interface EventCardProps {
 
 function EventCard({ imageSrc, imageHint, title, description }: EventCardProps) {
   return (
-    <Card className="text-left overflow-hidden transform transition-transform hover:scale-105 duration-300 bg-scratches border-border/50">
-       <Image 
-          src={imageSrc}
-          width={600}
-          height={400}
-          alt={title}
-          className="w-full h-48 object-cover"
-          data-ai-hint={imageHint}
-        />
+    <Card className="text-left overflow-hidden transform transition-transform hover:scale-105 duration-300 bg-scratches border-border/50 group">
+       <div className="relative">
+        <Image 
+            src={imageSrc}
+            width={600}
+            height={400}
+            alt={title}
+            className="w-full h-48 object-cover"
+            data-ai-hint={imageHint}
+          />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      </div>
       <CardHeader>
         <CardTitle className="font-headline text-2xl">{title}</CardTitle>
       </CardHeader>
