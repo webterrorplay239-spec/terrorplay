@@ -96,11 +96,15 @@ export default {
             height: '0',
           },
         },
-        fadeIn: {
+        'fade-in': {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
-        slideUp: {
+        'fade-out': {
+          '0%': { opacity: '1' },
+          '100%': { opacity: '0' },
+        },
+        'slide-up': {
           '0%': { transform: 'translateY(20px)', opacity: '0'},
           '100%': { transform: 'translateY(0)', opacity: '1'},
         },
@@ -116,14 +120,25 @@ export default {
           '52%': { opacity: '0.8' },
           '53%': { opacity: '1' },
           '100%': { opacity: '1' },
-        }
+        },
+        'glitch': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.6' },
+        },
+        'scanlines': {
+          '0%': { backgroundPosition: '0 0' },
+          '100%': { backgroundPosition: '0 100%' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'fade-in': 'fadeIn 0.5s ease-out',
-        'slide-up': 'slideUp 0.5s ease-out forwards',
+        'fade-in': 'fade-in 0.8s ease-out',
+        'fade-out': 'fade-out 0.8s ease-out forwards',
+        'slide-up': 'slide-up 0.8s ease-out forwards',
         'text-flicker': 'text-flicker 5s linear infinite',
+        'glitch': 'glitch 1.5s steps(1, end) infinite',
+        'scanlines': 'scanlines 10s linear infinite',
       },
       backgroundImage: {
         'scratches': "repeating-linear-gradient(45deg, transparent, transparent 10px, hsla(0,0%,0%,.1) 10px, hsla(0,0%,0%,.1) 12px), repeating-linear-gradient(135deg, transparent, transparent 5px, hsla(0,0%,0%,.05) 5px, hsla(0,0%,0%,.05) 7px), radial-gradient(circle at 10% 20%, hsl(var(--primary) / 0.1), transparent 20%), radial-gradient(circle at 80% 50%, hsl(var(--primary) / 0.08), transparent 25%)",
