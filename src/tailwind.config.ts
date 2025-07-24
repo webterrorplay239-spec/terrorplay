@@ -18,7 +18,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Creepster', 'cursive'],
+        body: ['Alegreya', 'serif'],
         headline: ['Belleza', 'sans-serif'],
         code: ['monospace', 'monospace'],
       },

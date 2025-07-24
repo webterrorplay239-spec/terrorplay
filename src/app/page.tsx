@@ -26,7 +26,6 @@ export default function HomePage() {
     return <HorrorIntro onFinished={() => setShowIntro(false)} />;
   }
 
-
   return (
     <div className="space-y-0">
       {/* Hero Section */}
@@ -164,7 +163,6 @@ function SectionDivider() {
         </div>
     )
 }
-
 
 interface HowItWorksStepProps {
   icon: React.ReactNode;

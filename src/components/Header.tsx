@@ -16,7 +16,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './
 import TicketPurchaseDialog from './TicketPurchaseDialog';
 import { useState } from 'react';
 
-
 const mainNavItems = [
   { href: '/quienes-somos', label: 'Quiénes Somos', icon: Users },
   { href: '/contacto', label: 'Contacto', icon: Mail },

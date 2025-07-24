@@ -45,7 +45,7 @@ const HorrorIntro = ({ onFinished }: HorrorIntroProps) => {
       <div className="absolute inset-0 bg-black opacity-50 scanlines"></div>
       
       {!showLogo ? (
-        <div className="font-code text-2xl md:text-4xl text-red-500 animate-glitch">
+        <div className="font-code text-4xl md:text-6xl text-red-500 animate-glitch">
             {messages[currentMessageIndex]?.text}
             <span className="animate-ping">_</span>
         </div>
@@ -66,11 +66,6 @@ const HorrorIntro = ({ onFinished }: HorrorIntroProps) => {
           );
           background-size: 100% 0.3rem;
           animation: scanlines 10s linear infinite;
-        }
-
-        @keyframes scanlines {
-          from { background-position: 0 0; }
-          to { background-position: 0 100vh; }
         }
         
         .animate-glitch {
