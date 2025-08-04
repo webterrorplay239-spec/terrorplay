@@ -11,7 +11,7 @@ import { ai } from '@/ai/genkit';
 import { z } from 'zod';
 
 // Esquema de entrada que coincide con el formulario de contacto
-export const SendContactEmailInputSchema = z.object({
+const SendContactEmailInputSchema = z.object({
   name: z.string().describe('El nombre del remitente.'),
   email: z.string().email().describe('La dirección de correo electrónico del remitente.'),
   eventType: z.string().describe('El tipo de evento seleccionado.'),
