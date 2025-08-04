@@ -12,6 +12,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Send } from 'lucide-react';
+import { sendContactEmail, type SendContactEmailInput } from '@/ai/flows/send-contact-email-flow';
+import { useState } from 'react';
 
 const contactSchema = z.object({
   name: z.string().min(2, { message: "El nombre debe tener al menos 2 caracteres." }),
@@ -24,6 +26,7 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 export default function ContactoPage() {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -34,19 +37,27 @@ export default function ContactoPage() {
     },
   });
 
-  const onSubmit: SubmitHandler<ContactFormData> = async (data) => {
-    // Aquí iría la lógica para enviar el email o guardar en una BBDD
-    console.log("Form data submitted:", data);
-    
-    // Simulación de envío
-    await new Promise(resolve => setTimeout(resolve, 1000));
+  const onSubmit: SubmitHandler<ContactFormData> = async (data: SendContactEmailInput) => {
+    setIsSubmitting(true);
+    try {
+      await sendContactEmail(data);
 
-    toast({
-      title: "¡Mensaje Enviado!",
-      description: "Gracias por contactarnos. Te responderemos lo antes posible.",
-    });
+      toast({
+        title: "¡Mensaje Enviado!",
+        description: "Gracias por contactarnos. Te responderemos lo antes posible.",
+      });
 
-    form.reset();
+      form.reset();
+    } catch (error) {
+       console.error("Error sending email:", error);
+       toast({
+        variant: "destructive",
+        title: "Error al enviar el mensaje",
+        description: "Ha ocurrido un problema. Por favor, inténtalo de nuevo más tarde.",
+       });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -133,8 +144,8 @@ export default function ContactoPage() {
                     </FormItem>
                   )}
                 />
-                <Button type="submit" disabled={form.formState.isSubmitting} className="w-full">
-                  {form.formState.isSubmitting ? 'Enviando...' : (
+                <Button type="submit" disabled={isSubmitting} className="w-full">
+                  {isSubmitting ? 'Enviando...' : (
                     <>
                       <Send className="mr-2 h-4 w-4" /> Enviar Petición
                     </>
