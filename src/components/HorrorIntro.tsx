@@ -9,10 +9,10 @@ interface HorrorIntroProps {
 }
 
 const messages = [
-  { text: "WAKING UP...", duration: 1500 },
-  { text: "SYSTEM FAILURE", duration: 1000 },
-  { text: "LOADING TERROR...", duration: 1500 },
-  { text: "CAN'T ESCAPE", duration: 1000 },
+  { text: "INICIANDO SISTEMA...", duration: 1500 },
+  { text: "FALLO CATASTRÓFICO", duration: 1000 },
+  { text: "CARGANDO TERROR...", duration: 1500 },
+  { text: "NO PUEDES ESCAPAR", duration: 1000 },
 ];
 
 const HorrorIntro = ({ onFinished }: HorrorIntroProps) => {
@@ -77,48 +77,22 @@ const HorrorIntro = ({ onFinished }: HorrorIntroProps) => {
 
         @keyframes glitch {
           0% {
-            clip-path: inset(89% 0 1% 0);
-            transform: translate(-10px, 5px);
+            transform: translate(0);
           }
-          10% {
-             clip-path: inset(44% 0 44% 0);
-             transform: translate(8px, -3px);
+          20% {
+            transform: translate(-3px, 3px);
           }
-           20% {
-            clip-path: inset(93% 0 2% 0);
-            transform: translate(-5px, 2px);
+          40% {
+            transform: translate(3px, -3px);
           }
-           30% {
-            clip-path: inset(38% 0 57% 0);
-            transform: translate(3px, -6px);
+          60% {
+            transform: translate(-3px, 3px);
           }
-           40% {
-            clip-path: inset(49% 0 46% 0);
-             transform: translate(-12px, 8px);
-          }
-           50% {
-            clip-path: inset(9% 0 81% 0);
-             transform: translate(6px, -4px);
-          }
-           60% {
-            clip-path: inset(88% 0 3% 0);
-            transform: translate(-9px, 7px);
-          }
-           70% {
-            clip-path: inset(55% 0 33% 0);
-            transform: translate(4px, -2px);
-          }
-           80% {
-            clip-path: inset(25% 0 68% 0);
-             transform: translate(-7px, 5px);
-          }
-           90% {
-            clip-path: inset(76% 0 12% 0);
-             transform: translate(10px, -6px);
+          80% {
+            transform: translate(3px, -3px);
           }
           100% {
-            clip-path: inset(9% 0 85% 0);
-            transform: translate(-4px, 3px);
+            transform: translate(0);
           }
         }
       `}</style>
