@@ -3,6 +3,11 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Users, Heart, Target } from 'lucide-react';
 
+export const metadata = {
+  title: 'Quiénes Somos - TerrorPlay | Expertos en Animación de Terror',
+  description: 'Conoce al equipo de TerrorPlay, apasionados del terror y profesionales en crear eventos y animaciones de miedo inolvidables. Tu productora de eventos de Halloween de confianza.',
+};
+
 export default function QuienesSomosPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 space-y-12">
@@ -30,7 +35,7 @@ export default function QuienesSomosPage() {
             TerrorPlay nació de la unión de expertos en teatro inmersivo, artistas de efectos especiales y organizadores de eventos con una pasión en común: el terror en todas sus formas. Creemos que el miedo, en un entorno seguro y controlado, es una de las emociones más potentes y divertidas que se pueden experimentar.
           </p>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Desde nuestros humildes comienzos montando pequeños pasajes del terror para amigos, hemos crecido hasta convertirnos en una productora de referencia en Sevilla, capaz de crear eventos a gran escala para ayuntamientos, empresas y particulares que buscan algo diferente.
+            Desde nuestros humildes comienzos montando pequeños pasajes del terror para amigos, hemos crecido hasta convertirnos en una productora de referencia en Sevilla, capaz de crear eventos a gran escala para ayuntamientos, empresas y particulares que buscan una animación de Halloween o una fiesta de terror diferente.
           </p>
         </div>
       </section>
@@ -45,7 +50,7 @@ export default function QuienesSomosPage() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Nuestra misión es profesionalizar el entretenimiento de terror, ofreciendo experiencias de alta calidad, seguras e inmersivas que dejen un recuerdo imborrable (y algún que otro grito) en nuestros participantes. Queremos ser la primera opción para cualquiera que busque una dosis de adrenalina y diversión.
+                Nuestra misión es profesionalizar el entretenimiento de terror, ofreciendo experiencias de alta calidad, seguras e inmersivas que dejen un recuerdo imborrable (y algún que otro grito) en nuestros participantes. Queremos ser la primera opción para cualquiera que busque una dosis de adrenalina y diversión en su evento.
               </p>
             </CardContent>
           </Card>
@@ -70,3 +75,5 @@ export default function QuienesSomosPage() {
     </div>
   );
 }
+
+    

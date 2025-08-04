@@ -52,13 +52,13 @@ export default function HomePage() {
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center bg-scratches rounded-lg">
         <div className="relative animate-slide-up">
           <h2 className="text-4xl font-headline text-center text-primary">Cómo lo Hacemos</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Nuestro proceso para garantizar que tu evento sea terroríficamente perfecto.</p>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Nuestro proceso para garantizar que tu evento de Halloween o fiesta de terror sea perfecta.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8 pt-12">
           <HowItWorksStep
             icon={<MessageSquareQuote className="h-12 w-12 text-accent" />}
             title="1. Cuéntanos tu Idea"
-            description="Contactas con nosotros y nos explicas qué tipo de evento de terror tienes en mente. ¿Quieres sustos, misterio, o ambos?"
+            description="Contactas con nosotros y nos explicas qué tipo de evento de terror tienes en mente, el público y la localización. ¿Quieres sustos, misterio, o ambos?"
              animationDelay="0.2s"
           />
           <HowItWorksStep
@@ -81,35 +81,35 @@ export default function HomePage() {
       {/* Our Events Section */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
         <div className="relative animate-slide-up">
-            <h2 className="text-4xl font-headline text-center text-primary">Nuestros Eventos</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Creamos todo tipo de experiencias de terror. Aquí tienes algunos ejemplos.</p>
+            <h2 className="text-4xl font-headline text-center text-primary">Nuestros Eventos de Terror</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Creamos todo tipo de experiencias de miedo. Aquí tienes algunos ejemplos.</p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-12">
           <EventCard
             imageSrc="https://placehold.co/600x400.png"
             imageHint="haunted house passage"
             title="Pasajes del Terror"
-            description="Recorridos inmersivos llenos de sustos, actores y efectos especiales. Ideal para fiestas, ayuntamientos y centros comerciales."
+            description="Recorridos inmersivos llenos de sustos, actores y efectos especiales. Ideal para fiestas de Halloween, ayuntamientos y centros comerciales."
             animationDelay="0.2s"
           />
           <EventCard
             imageSrc="https://placehold.co/600x400.png"
             imageHint="escape room dark"
             title="Escape Rooms Temáticos"
-            description="Nuestros game masters os guiarán (o atormentarán) a través de un misterio que deberéis resolver antes de que sea tarde."
+            description="Nuestros game masters os guiarán (o atormentarán) a través de un misterio que deberéis resolver antes de que sea tarde. Experiencias portátiles."
              animationDelay="0.4s"
           />
           <EventCard
             imageSrc="https://placehold.co/600x400.png"
             imageHint="murder mystery dinner"
             title="Cenas de Misterio"
-            description="Una cena donde nada es lo que parece y uno de los comensales es un asesino. Perfecto para eventos de empresa y grupos."
+            description="Una cena donde nada es lo que parece y uno de los comensales es un asesino. Perfecto para eventos de empresa y grupos que buscan algo original."
             animationDelay="0.6s"
           />
         </div>
         <div className="mt-12 animate-slide-up" style={{animationDelay: "0.8s"}}>
             <Button variant="outline" asChild>
-                <Link href="/eventos">Ver todos los servicios</Link>
+                <Link href="/eventos">Ver todos los servicios de animación</Link>
             </Button>
         </div>
       </section>
@@ -139,9 +139,9 @@ export default function HomePage() {
 
       {/* Final CTA Section */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center bg-scratches my-12 rounded-lg shadow-xl animate-slide-up">
-          <h3 className="text-3xl font-headline text-primary mb-4">¿Hablamos de tu Próximo Evento?</h3>
+          <h3 className="text-3xl font-headline text-primary mb-4">¿Hablamos de tu Próximo Evento de Terror?</h3>
           <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Estamos listos para hacer realidad tus pesadillas. Contacta con nosotros y pide un presupuesto sin compromiso.
+            Estamos listos para hacer realidad tus pesadillas. Contacta con nosotros y pide un presupuesto sin compromiso para tu fiesta de Halloween, evento de empresa o celebración.
           </p>
           <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
             <Link href="/contacto">Contactar</Link>
@@ -232,3 +232,5 @@ function TestimonialCard({ quote, author, animationDelay }: TestimonialCardProps
         </Card>
     )
 }
+
+    

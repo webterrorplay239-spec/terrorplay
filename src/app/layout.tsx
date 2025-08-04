@@ -7,12 +7,12 @@ import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
 export const metadata: Metadata = {
-  title: 'TerrorPlay - Eventos de Terror a Medida',
-  description: 'Creamos experiencias de terror inolvidables. Eventos personalizados para empresas y particulares.',
+  title: 'TerrorPlay - Eventos y Animaciones de Terror para Halloween',
+  description: 'Especialistas en eventos de terror, pasajes del terror, escape rooms y animaciones para Halloween. Creamos experiencias de miedo inolvidables para fiestas, empresas y ayuntamientos.',
 };
 
 const SmokeEffect = () => (
-    <div className="smoke-container">
+    <div className="smoke-container hidden md:block">
         <div className="smoke-element s1"></div>
         <div className="smoke-element s2"></div>
         <div className="smoke-element s3"></div>
@@ -46,3 +46,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+    

@@ -55,7 +55,7 @@ export default function ContactoPage() {
         <Mail className="h-16 w-16 text-primary mx-auto mb-4" />
         <h1 className="text-5xl md:text-7xl font-headline text-primary mb-4 animate-text-flicker">Contacta con Nosotros</h1>
         <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-          ¿Listo para planificar tu próximo evento de terror? Rellena el formulario y cuéntanos tu idea.
+          ¿Listo para planificar tu próximo evento de terror o animación de Halloween? Rellena el formulario y cuéntanos tu idea.
         </p>
       </section>
 
@@ -107,9 +107,9 @@ export default function ContactoPage() {
                           </FormControl>
                           <SelectContent>
                             <SelectItem value="pasaje-terror">Pasaje del Terror</SelectItem>
-                            <SelectItem value="escape-room">Escape Room</SelectItem>
+                            <SelectItem value="escape-room">Escape Room de Terror</SelectItem>
                             <SelectItem value="cena-misterio">Cena de Misterio / Cluedo</SelectItem>
-                            <SelectItem value="otro">Otro tipo de evento</SelectItem>
+                            <SelectItem value="otro">Otro tipo de evento de miedo</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -124,7 +124,7 @@ export default function ContactoPage() {
                       <FormLabel>Tu Mensaje</FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="Cuéntanos un poco sobre tu idea: fecha aproximada, número de personas, localización, y cualquier detalle que se te ocurra."
+                          placeholder="Cuéntanos un poco sobre tu idea: fecha aproximada, número de personas, localización, y cualquier detalle que se te ocurra para tu evento de terror."
                           className="min-h-[120px] resize-none"
                           {...field}
                         />
@@ -147,3 +147,5 @@ export default function ContactoPage() {
     </div>
   );
 }
+
+    
