@@ -16,12 +16,12 @@ export default {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      body: ['Lacquer', 'cursive'],
+      headline: ['Lacquer', 'cursive'],
+      code: ['monospace', 'monospace'],
+    },
     extend: {
-      fontFamily: {
-        body: ['Lacquer', 'cursive'],
-        headline: ['Lacquer', 'cursive'],
-        code: ['monospace', 'monospace'],
-      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
