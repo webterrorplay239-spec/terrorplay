@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const SmokeEffect = () => (
-    <div className="smoke-container hidden md:block">
+    <div className="smoke-container">
         <div className="smoke-element s1"></div>
         <div className="smoke-element s2"></div>
         <div className="smoke-element s3"></div>
