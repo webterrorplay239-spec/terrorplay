@@ -41,7 +41,7 @@ export default function EventosPage() {
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 space-y-12">
       <section className="text-center animate-fade-in relative overflow-hidden rounded-lg p-4">
         <Clapperboard className="h-16 w-16 text-primary mx-auto mb-4" />
-        <h1 className="text-5xl md:text-7xl font-headline text-primary mb-4 animate-text-flicker">Nuestros Eventos de Terror</h1>
+        <h1 className="text-5xl md:text-7xl font-['Lacquer',_cursive] text-primary mb-4 animate-text-flicker">Nuestros Eventos de Terror</h1>
         <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
           Desde sustos y adrenalina hasta misterios y tensión. Explora los tipos de experiencias que podemos crear para ti.
         </p>
@@ -63,7 +63,7 @@ export default function EventosPage() {
               </div>
               <div className="md:col-span-3 p-6">
                 <CardHeader>
-                  <CardTitle className="flex items-center text-2xl md:text-3xl font-headline">
+                  <CardTitle className="flex items-center text-2xl md:text-3xl font-['Lacquer',_cursive]">
                     <service.icon className="h-8 w-8 mr-4 text-accent" />
                     {service.title}
                   </CardTitle>

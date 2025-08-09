@@ -64,7 +64,7 @@ export default function ContactoPage() {
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 space-y-12">
        <section className="text-center animate-fade-in relative overflow-hidden rounded-lg p-4">
         <Mail className="h-16 w-16 text-primary mx-auto mb-4" />
-        <h1 className="text-5xl md:text-7xl font-headline text-primary mb-4 animate-text-flicker">Contacta con Nosotros</h1>
+        <h1 className="text-5xl md:text-7xl font-['Lacquer',_cursive] text-primary mb-4 animate-text-flicker">Contacta con Nosotros</h1>
         <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
           ¿Listo para planificar tu próximo evento de terror o animación de Halloween? Rellena el formulario y cuéntanos tu idea.
         </p>
@@ -72,7 +72,7 @@ export default function ContactoPage() {
 
       <Card className="shadow-2xl shadow-primary/20 animate-slide-up max-w-2xl mx-auto bg-scratches">
         <CardHeader>
-          <CardTitle className="font-headline text-2xl">Solicita tu Presupuesto</CardTitle>
+          <CardTitle className="font-['Lacquer',_cursive] text-2xl">Solicita tu Presupuesto</CardTitle>
           <CardDescription>Nos pondremos en contacto contigo para dar forma a tu pesadilla ideal.</CardDescription>
         </CardHeader>
         <CardContent>

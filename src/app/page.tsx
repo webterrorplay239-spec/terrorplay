@@ -32,7 +32,7 @@ export default function HomePage() {
       <ParallaxBanner imageUrl="https://placehold.co/1200x800.png" dataAiHint="dark atmospheric horror">
         <div className="relative z-20 text-center flex flex-col items-center justify-center h-full bg-black/70 p-8 animate-fade-in">
             <NeonLogo className="w-40 h-40 md:w-56 md:h-56 text-accent mb-4" />
-            <h1 className="text-5xl md:text-7xl font-headline text-primary mb-6 drop-shadow-lg animate-text-flicker">
+            <h1 className="text-5xl md:text-7xl font-['Lacquer',_cursive] text-primary mb-6 drop-shadow-lg animate-text-flicker">
               Creamos Eventos de Terror Inolvidables
             </h1>
             <p className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto mb-8 drop-shadow-md">
@@ -51,7 +51,7 @@ export default function HomePage() {
       {/* How it Works Section */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center bg-scratches rounded-lg">
         <div className="relative animate-slide-up">
-          <h2 className="text-4xl font-headline text-center text-primary">Cómo lo Hacemos</h2>
+          <h2 className="text-4xl font-['Lacquer',_cursive] text-center text-primary">Cómo lo Hacemos</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Nuestro proceso para garantizar que tu evento de Halloween o fiesta de terror sea perfecta.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8 pt-12">
@@ -81,7 +81,7 @@ export default function HomePage() {
       {/* Our Events Section */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
         <div className="relative animate-slide-up">
-            <h2 className="text-4xl font-headline text-center text-primary">Nuestros Eventos de Terror</h2>
+            <h2 className="text-4xl font-['Lacquer',_cursive] text-center text-primary">Nuestros Eventos de Terror</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Creamos todo tipo de experiencias de miedo. Aquí tienes algunos ejemplos.</p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-12">
@@ -119,7 +119,7 @@ export default function HomePage() {
       {/* Testimonials Section */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
          <div className="relative animate-slide-up">
-            <h2 className="text-4xl font-headline text-center text-primary">Opiniones de Nuestros Clientes</h2>
+            <h2 className="text-4xl font-['Lacquer',_cursive] text-center text-primary">Opiniones de Nuestros Clientes</h2>
          </div>
          <div className="grid md:grid-cols-2 gap-8 pt-12 max-w-4xl mx-auto">
             <TestimonialCard
@@ -139,7 +139,7 @@ export default function HomePage() {
 
       {/* Final CTA Section */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center bg-scratches my-12 rounded-lg shadow-xl animate-slide-up">
-          <h3 className="text-3xl font-headline text-primary mb-4">¿Hablamos de tu Próximo Evento de Terror?</h3>
+          <h3 className="text-3xl font-['Lacquer',_cursive] text-primary mb-4">¿Hablamos de tu Próximo Evento de Terror?</h3>
           <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
             Estamos listos para hacer realidad tus pesadillas. Contacta con nosotros y pide un presupuesto sin compromiso para tu fiesta de Halloween, evento de empresa o celebración.
           </p>
@@ -175,7 +175,7 @@ function HowItWorksStep({ icon, title, description, animationDelay }: HowItWorks
   return (
     <div className="flex flex-col items-center space-y-3 p-4 rounded-lg transition-all duration-300 hover:bg-card/50 animate-slide-up" style={{ animationDelay }}>
       <div className="p-4 bg-card rounded-full">{icon}</div>
-      <h3 className="text-2xl font-headline">{title}</h3>
+      <h3 className="text-2xl font-['Lacquer',_cursive]">{title}</h3>
       <p className="text-muted-foreground">{description}</p>
     </div>
   );
@@ -204,7 +204,7 @@ function EventCard({ imageSrc, imageHint, title, description, animationDelay }: 
         <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
       <CardHeader>
-        <CardTitle className="font-headline text-2xl">{title}</CardTitle>
+        <CardTitle className="font-['Lacquer',_cursive] text-2xl">{title}</CardTitle>
       </CardHeader>
       <CardContent>
         <p className="text-muted-foreground">{description}</p>
@@ -227,10 +227,8 @@ function TestimonialCard({ quote, author, animationDelay }: TestimonialCardProps
                 <blockquote className="text-lg italic border-l-4 border-accent pl-4">
                     {quote}
                 </blockquote>
-                <p className="text-right font-headline text-primary">— {author}</p>
+                <p className="text-right font-['Lacquer',_cursive] text-primary">— {author}</p>
             </CardContent>
         </Card>
     )
 }
-
-    
