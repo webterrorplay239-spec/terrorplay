@@ -41,7 +41,7 @@ const HorrorIntro = ({ onFinished }: HorrorIntroProps) => {
   }, [currentMessageIndex, showLogo, onFinished]);
 
   return (
-    <div className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black transition-opacity duration-1000 ${fadingOut ? 'opacity-0' : 'opacity-100'}`}>
+    <div className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black transition-opacity duration-1000 pointer-events-none ${fadingOut ? 'opacity-0' : 'opacity-100'}`}>
       <div className="absolute inset-0 bg-black opacity-50 scanlines"></div>
       
       {!showLogo ? (
@@ -52,7 +52,7 @@ const HorrorIntro = ({ onFinished }: HorrorIntroProps) => {
       ) : (
         <div className="flex flex-col items-center animate-fade-in">
              <NeonLogo className="w-48 h-48 md:w-64 md:h-64 text-primary animate-pulse" />
-             <h1 className="text-6xl md:text-8xl font-headline text-primary mt-4 animate-text-flicker">TERRORPLAY</h1>
+             <h1 className="text-6xl md:text-8xl font-['Lacquer',_cursive] text-primary mt-4 animate-text-flicker">TERRORPLAY</h1>
         </div>
       )}
 
