@@ -18,8 +18,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Alegreya', 'serif'],
-        headline: ['Belleza', 'sans-serif'],
+        body: ['Lacquer', 'cursive'],
+        headline: ['Lacquer', 'cursive'],
         code: ['monospace', 'monospace'],
       },
       colors: {
