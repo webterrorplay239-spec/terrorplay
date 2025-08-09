@@ -192,16 +192,19 @@ interface EventCardProps {
 function EventCard({ imageSrc, imageHint, title, description, animationDelay }: EventCardProps) {
   return (
     <Card className="text-left overflow-hidden transform transition-transform hover:scale-105 duration-300 bg-scratches border-border/50 group animate-slide-up" style={{ animationDelay }}>
-       <div className="relative">
+       <div className="relative overflow-hidden">
         <Image 
             src={imageSrc}
             width={600}
             height={400}
             alt={title}
-            className="w-full h-48 object-cover"
+            className="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110 group-hover:blur-sm group-hover:brightness-50"
             data-ai-hint={imageHint}
           />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-glitch">
+            <p className="text-white text-2xl font-['Lacquer',_cursive] drop-shadow-lg">Ver Más</p>
+        </div>
       </div>
       <CardHeader>
         <CardTitle className="font-['Lacquer',_cursive] text-2xl">{title}</CardTitle>

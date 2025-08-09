@@ -22,7 +22,7 @@ const TerrorPlayLogo: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
       textAnchor="middle"
       fontSize="28" // Adjusted font size
       fill="url(#logoGradient)"
-      className="font-headline tracking-wider"
+      className="font-['Lacquer',_cursive] tracking-wider"
       style={{ filter: "drop-shadow(2px 2px 3px rgba(0,0,0,0.5))" }}
     >
       TERRORPLAY

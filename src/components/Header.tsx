@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { Calendar, Users, Mail, Menu, ChevronDown, Clapperboard, Puzzle, Drama, Ticket } from 'lucide-react';
-import TerrorPlayLogo from './icons/TerrorPlayLogo';
+import NeonLogo from './icons/NeonLogo';
 import { Button } from './ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from './ui/sheet';
 import {
@@ -36,7 +36,7 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center space-x-2 group" aria-label="TerrorPlay Home">
-            <TerrorPlayLogo className="h-12 w-auto" />
+            <NeonLogo className="h-12 w-auto text-primary" />
           </Link>
 
           {/* Desktop Navigation */}

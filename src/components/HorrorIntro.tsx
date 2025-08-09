@@ -41,12 +41,12 @@ const HorrorIntro = ({ onFinished }: HorrorIntroProps) => {
   }, [currentMessageIndex, showLogo, onFinished]);
 
   return (
-    <div className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black transition-opacity duration-1000 pointer-events-none ${fadingOut ? 'opacity-0' : 'opacity-100'}`}>
-      <div className="absolute inset-0 bg-black opacity-50 scanlines"></div>
+    <div className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black transition-opacity duration-1000 ${fadingOut ? 'opacity-0' : 'opacity-100'}`}>
+      <div className="absolute inset-0 bg-black opacity-50 scanlines pointer-events-none"></div>
       
       {!showLogo ? (
-        <div className="font-code text-4xl md:text-6xl text-red-500 animate-glitch">
-            {messages[currentMessageIndex]?.text}
+        <div className="font-mono text-2xl md:text-4xl text-red-500 animate-glitch-text p-4">
+            {'> '}{messages[currentMessageIndex]?.text}
             <span className="animate-ping">_</span>
         </div>
       ) : (
@@ -68,31 +68,49 @@ const HorrorIntro = ({ onFinished }: HorrorIntroProps) => {
           animation: scanlines 10s linear infinite;
         }
         
-        .animate-glitch {
-            animation: glitch 1s steps(2, end) infinite;
+        .animate-glitch-text {
+            animation: glitch-text-anim 2.5s infinite steps(8);
             text-shadow: 
-                -2px -2px 0px hsl(var(--primary)),
-                 2px  2px 0px hsl(var(--accent));
+                -1px -1px 0px hsla(var(--primary), 0.5),
+                 1px  1px 0px hsla(var(--accent), 0.5);
         }
 
-        @keyframes glitch {
+        @keyframes glitch-text-anim {
           0% {
-            transform: translate(0);
+            clip-path: inset(85% 0 8% 0);
+            opacity: 0.8;
+          }
+          10% {
+            clip-path: inset(5% 0 40% 0);
           }
           20% {
-            transform: translate(-3px, 3px);
+            clip-path: inset(90% 0 3% 0);
+          }
+          30% {
+            clip-path: inset(20% 0 55% 0);
           }
           40% {
-            transform: translate(3px, -3px);
+            clip-path: inset(60% 0 10% 0);
+          }
+          50% {
+            clip-path: inset(95% 0 2% 0);
+            opacity: 0.5;
           }
           60% {
-            transform: translate(-3px, 3px);
+             clip-path: inset(15% 0 70% 0);
+          }
+          70% {
+             clip-path: inset(80% 0 5% 0);
           }
           80% {
-            transform: translate(3px, -3px);
+            clip-path: inset(45% 0 30% 0);
+          }
+          90% {
+            clip-path: inset(90% 0 8% 0);
           }
           100% {
-            transform: translate(0);
+            clip-path: inset(10% 0 85% 0);
+            opacity: 1;
           }
         }
       `}</style>

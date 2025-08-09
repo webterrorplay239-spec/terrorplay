@@ -24,24 +24,18 @@ const NeonLogo: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
         </feMerge>
       </filter>
     </defs>
-    <circle
-      cx="50"
-      cy="50"
-      r="40"
-      stroke="hsl(var(--primary))"
-      strokeWidth="3"
-      fill="none"
-      filter="url(#neon-glow-primary)"
-    />
-    <path
-      d="M50 10 L85 75 L15 75 Z"
-      stroke="currentColor"
-      strokeWidth="3"
-      fill="none"
-      filter="url(#neon-glow-accent)"
-      strokeLinejoin="round"
-      strokeLinecap="round"
-    />
+    <g>
+        {/* T */}
+        <path d="M 30 35 H 70" stroke="hsl(var(--primary))" strokeWidth="4" filter="url(#neon-glow-primary)" />
+        <path d="M 50 35 V 75" stroke="hsl(var(--primary))" strokeWidth="4" filter="url(#neon-glow-primary)" />
+        
+        {/* P */}
+        <path d="M 40 25 V 65" stroke="currentColor" strokeWidth="3" filter="url(#neon-glow-accent)" />
+        <path d="M 40 25 C 55 25, 55 45, 40 45" stroke="currentColor" strokeWidth="3" fill="none" filter="url(#neon-glow-accent)" />
+
+        {/* Outer Circle */}
+        <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="1" opacity="0.5" fill="none" />
+    </g>
   </svg>
 );
 
