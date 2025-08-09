@@ -69,12 +69,12 @@ export default function Header() {
                 </Link>
               </Button>
             ))}
-            {/*
+            
             <Button onClick={() => setTicketModalOpen(true)} className="ml-4 bg-primary hover:bg-primary/90 text-primary-foreground">
               <Ticket className="h-5 w-5 mr-2" />
               Compra tus Entradas
             </Button>
-            */}
+            
           </nav>
 
           {/* Mobile Navigation */}
@@ -91,16 +91,16 @@ export default function Header() {
                     <SheetTitle className="sr-only">Menú de Navegación</SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col space-y-2 mt-8">
-                   {/*
+                   
                    <Button onClick={() => {
-                     const closeButton = document.querySelector<HTMLButtonElement>('[data-radix-dialog-close]');
+                     const closeButton = document.querySelector('[data-radix-collection-item]')?.closest('button');
                      if (closeButton) closeButton.click();
                      setTicketModalOpen(true)
                     }} className="mb-4 bg-primary hover:bg-primary/90 text-primary-foreground">
                       <Ticket className="h-5 w-5 mr-2" />
                       Compra tus Entradas
                    </Button>
-                   */}
+                   
                   <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="eventos" className="border-b-0">
                       <AccordionTrigger className="hover:no-underline text-lg">
