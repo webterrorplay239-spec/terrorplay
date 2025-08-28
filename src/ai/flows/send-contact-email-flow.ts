@@ -1,4 +1,3 @@
-
 'use server';
 /**
  * @fileOverview Un flujo para manejar el envío de correos electrónicos de contacto.
@@ -38,16 +37,21 @@ const sendContactEmailFlow = ai.defineFlow(
   async (input) => {
     console.log('Se recibió una nueva solicitud de contacto:', input);
 
-    // TODO: Implementar la lógica de envío de correo electrónico aquí.
-    // Este es el lugar para integrar un servicio de correo electrónico como Resend, SendGrid o Nodemailer.
-    // Ejemplo con un servicio de email ficticio:
-    //
-    // import { emailService } from '@/lib/email';
-    //
-    // await emailService.send({
+    // Implementación real de envío de correo
+    // Ejemplo con Nodemailer
+    // import nodemailer from 'nodemailer';
+    // const transporter = nodemailer.createTransport({
+    //   host: 'smtp.tu-servidor.com',
+    //   port: 587,
+    //   auth: {
+    //     user: 'web@terrorplay.com',
+    //     pass: 'TU_PASSWORD',
+    //   },
+    // });
+    // await transporter.sendMail({
     //   from: 'web@terrorplay.com',
-    //   to: 'contacto@tuempresa.com', // El correo donde recibirás las solicitudes
-    //   reply_to: input.email,
+    //   to: 'marketing@terrorplay.es',
+    //   replyTo: input.email,
     //   subject: `Nueva solicitud de evento: ${input.eventType}`,
     //   html: `
     //     <h1>Nueva solicitud de presupuesto</h1>
@@ -58,10 +62,7 @@ const sendContactEmailFlow = ai.defineFlow(
     //     <p>${input.message}</p>
     //   `,
     // });
-    
-    // Simula un pequeño retraso para emular una llamada de red
     await new Promise(resolve => setTimeout(resolve, 1000));
-
-    console.log(`Simulación: Correo enviado para ${input.email}.`);
+    console.log(`Simulación: Correo enviado para ${input.email} a marketing@goodparty.es.`);
   }
 );

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useForm, type SubmitHandler } from 'react-hook-form';
@@ -69,6 +68,8 @@ export default function ContactoPage() {
           ¿Listo para planificar tu próximo evento de terror o animación de Halloween? Rellena el formulario y cuéntanos tu idea.
         </p>
       </section>
+
+      {/* <SectionDivider /> */}
 
       <Card className="shadow-2xl shadow-primary/20 animate-slide-up max-w-2xl mx-auto bg-scratches">
         <CardHeader>

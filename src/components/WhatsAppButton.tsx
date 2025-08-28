@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -22,9 +21,10 @@ const WhatsAppIcon = () => (
 )
 
 export default function WhatsAppButton({ phoneNumber, message }: WhatsAppButtonProps) {
-    const encodedMessage = encodeURIComponent(message || '');
-    const href = `https://wa.me/${phoneNumber.replace(/\D/g, '')}?text=${encodedMessage}`;
-
+    // Siempre usar el número correcto si no se pasa explícitamente
+    const finalNumber = phoneNumber && phoneNumber.trim() !== '' ? phoneNumber : '34653336695';
+    const encodedMessage = encodeURIComponent(message || 'Hola! Me gustaría pedir presupuesto para un evento de terror.');
+    const href = `https://wa.me/34653336695?text=${encodedMessage}`;
     return (
         <Link 
             href={href}

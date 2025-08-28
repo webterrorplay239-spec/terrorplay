@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Users, Heart, Target } from 'lucide-react';
@@ -39,6 +38,8 @@ export default function QuienesSomosPage() {
           </p>
         </div>
       </section>
+
+      {/* <SectionDivider /> */}
 
       <section className="grid md:grid-cols-2 gap-8 text-left">
           <Card className="bg-scratches">

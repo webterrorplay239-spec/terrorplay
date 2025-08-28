@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from 'next/image';
@@ -46,7 +45,7 @@ export default function HomePage() {
         </div>
       </ParallaxBanner>
 
-      <SectionDivider />
+      {/* <SectionDivider /> */}
 
       {/* How it Works Section */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center bg-scratches rounded-lg">
@@ -76,7 +75,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <SectionDivider />
+      {/* <SectionDivider /> */}
 
       {/* Our Events Section */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
@@ -114,7 +113,7 @@ export default function HomePage() {
         </div>
       </section>
       
-      <SectionDivider />
+      {/* <SectionDivider /> */}
 
       {/* Testimonials Section */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
@@ -135,7 +134,7 @@ export default function HomePage() {
          </div>
       </section>
 
-      <SectionDivider />
+      {/* <SectionDivider /> */}
 
       {/* Final CTA Section */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center bg-scratches my-12 rounded-lg shadow-xl animate-slide-up">
