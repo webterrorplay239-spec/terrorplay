@@ -30,7 +30,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <ParallaxBanner imageUrl="https://placehold.co/1200x800.png" dataAiHint="dark atmospheric horror">
         <div className="relative z-20 text-center flex flex-col items-center justify-center h-full bg-black/70 p-8 animate-fade-in">
-            <NeonLogo className="w-40 h-40 md:w-56 md:h-56 text-accent mb-4" />
+            <img src="/logo.png" alt="TerrorPlay Logo" className="w-48 h-48 md:w-64 md:h-64 animate-pulse" />
             <h1 className="text-5xl md:text-7xl font-['Lacquer',_cursive] text-primary mb-6 drop-shadow-lg animate-text-flicker">
               Creamos Eventos de Terror Inolvidables
             </h1>
