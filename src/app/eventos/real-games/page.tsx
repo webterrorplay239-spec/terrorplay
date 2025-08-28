@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -38,7 +37,7 @@ export default function RealGamesPage() {
         </div>
       </section>
 
-      <SectionDivider />
+      {/* <SectionDivider /> */}
 
        <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
         <div className="relative animate-slide-up">

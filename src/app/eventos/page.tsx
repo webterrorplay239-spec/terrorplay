@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from 'next/image';
@@ -46,6 +45,8 @@ export default function EventosPage() {
           Desde sustos y adrenalina hasta misterios y tensión. Explora los tipos de experiencias que podemos crear para ti.
         </p>
       </section>
+
+      {/* <SectionDivider /> */}
 
       <section className="space-y-8">
         {eventServices.map((service, index) => (
