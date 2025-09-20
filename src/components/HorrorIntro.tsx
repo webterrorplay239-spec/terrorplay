@@ -20,13 +20,33 @@ const horrorImages = [
   "/vista-frontal-personaje-espeluznante-posando.jpg",
   "/retrato-de-payaso-aterrador.jpg",
   "/ojos-de-zombi-de-cerca.jpg"
-];
+].map((path) => `${process.env.NEXT_PUBLIC_BASE_PATH || ''}${path}`);
 
 const HorrorIntro = ({ onFinished }: HorrorIntroProps) => {
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showLogo, setShowLogo] = useState(false);
   const [fadingOut, setFadingOut] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  // Precarga las imágenes
+  useEffect(() => {
+    const imagePromises = horrorImages.map((src) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = resolve;
+        img.onerror = reject;
+      });
+    });
+
+    Promise.all(imagePromises)
+      .then(() => setImagesLoaded(true))
+      .catch((error) => {
+        console.error('Error cargando imágenes:', error);
+        setImagesLoaded(true); // Continuamos aunque haya errores
+      });
+  }, []);
 
   useEffect(() => {
     if (currentMessageIndex < messages.length) {
@@ -62,7 +82,7 @@ const HorrorIntro = ({ onFinished }: HorrorIntroProps) => {
     <div className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black transition-opacity duration-1000 ${fadingOut ? 'opacity-0' : 'opacity-100'}`}>
       <div className="absolute inset-0 bg-black opacity-50 scanlines pointer-events-none"></div>
       
-      {!showLogo && (
+      {!showLogo && imagesLoaded && (
         <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
           <img 
             src={horrorImages[currentImageIndex]} 
@@ -73,6 +93,11 @@ const HorrorIntro = ({ onFinished }: HorrorIntroProps) => {
               mixBlendMode: 'luminosity'
             }}
             key={currentImageIndex} // Para forzar la re-animación
+            onError={(e) => {
+              console.error(`Error loading image: ${horrorImages[currentImageIndex]}`);
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
+            }}
           />
           <div className="absolute inset-0 bg-red-900/20 mix-blend-overlay animate-flash" 
                key={`overlay-${currentImageIndex}`}>
