@@ -13,21 +13,31 @@ export const metadata = {
 export default function PasajesDelTerrorPage() {
   return (
     <div className="space-y-0">
-       <ParallaxBanner imageUrl="https://placehold.co/1200x800.png" dataAiHint="haunted house spooky corridor">
-        <div className="relative z-20 text-center flex flex-col items-center justify-center h-full bg-black/70 p-8 animate-fade-in">
-            <Clapperboard className="h-24 w-24 text-accent mb-4" />
-            <h1 className="text-5xl md:text-7xl font-['Lacquer',_cursive] text-primary mb-6 drop-shadow-lg animate-text-flicker">
-              Pasajes del Terror
-            </h1>
-            <p className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto mb-8 drop-shadow-md">
-              Creamos recorridos de miedo a medida, donde cada esquina esconde un nuevo grito. La experiencia de terror definitiva para tu evento de Halloween.
+       <ParallaxBanner 
+        imageUrl="/vecteezy_abandoned-factory-spooky-corridor-rusty-metal-vanishing_25095311.jpg" 
+        dataAiHint="haunted house spooky corridor"
+      >
+        <div className="relative z-20 text-center flex flex-col items-center justify-center h-screen min-h-[600px] bg-black/70 p-8 animate-fade-in">
+          <Clapperboard className="h-24 w-24 text-accent mb-4" />
+          <h1 className="text-5xl md:text-7xl font-horror text-red-600 mb-6 drop-shadow-lg animate-text-flicker">
+            Pasajes del Terror
+          </h1>
+          <p className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto mb-8 drop-shadow-md">
+            Creamos recorridos de miedo a medida, donde cada esquina esconde un nuevo grito.
+            La experiencia de terror definitiva para tu evento de Halloween.
+          </p>
+          <div className="mt-4 bg-red-950/30 p-4 rounded-lg max-w-2xl">
+            <p className="text-sm text-red-200">
+              Actores profesionales, efectos especiales y una atmósfera inmersiva
+              que te transportará a tus peores pesadillas.
             </p>
+          </div>
         </div>
       </ParallaxBanner>
 
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 space-y-8 bg-scratches rounded-lg my-12">
-        <h2 className="text-4xl font-['Lacquer',_cursive] text-center text-primary">Especialistas en Gritos y Pesadillas</h2>
-        <div className="max-w-4xl mx-auto text-lg text-left md:text-center space-y-4 text-muted-foreground leading-relaxed">
+        <h2 className="text-4xl font-horror text-red-600 text-center mb-6">Especialistas en Gritos y Pesadillas</h2>
+        <div className="max-w-4xl mx-auto text-lg text-left md:text-center space-y-4 text-foreground leading-relaxed">
             <p>
                 En TerrorPlay, somos especialistas en el diseño y montaje de pasajes del terror que se adaptan a cualquier espacio y público. Transformamos locales, fincas, recintos feriales o incluso tu propia casa en un laberinto de pesadilla.
             </p>

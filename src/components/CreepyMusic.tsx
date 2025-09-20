@@ -21,7 +21,7 @@ export default function CreepyMusic() {
       {!enabled && (
         <button
           onClick={handlePlay}
-          className="fixed bottom-6 right-6 z-[9999] p-4 rounded-full bg-background border-2 border-accent shadow-lg hover:bg-accent hover:text-background transition-all flex items-center gap-2 animate-fade-in"
+          className="fixed bottom-6 left-6 z-[9999] p-4 rounded-full bg-background border-2 border-accent shadow-lg hover:bg-accent hover:text-background transition-all flex items-center gap-2 animate-fade-in"
           title="Activar ambiente sonoro"
         >
           <Volume2 className="w-6 h-6 text-accent" />

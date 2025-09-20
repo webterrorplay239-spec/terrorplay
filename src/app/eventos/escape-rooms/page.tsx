@@ -13,21 +13,30 @@ export const metadata = {
 export default function EscapeRoomsPage() {
   return (
     <div className="space-y-0">
-       <ParallaxBanner imageUrl="https://placehold.co/1200x800.png" dataAiHint="dark escape room door">
-        <div className="relative z-20 text-center flex flex-col items-center justify-center h-full bg-black/70 p-8 animate-fade-in">
-            <Puzzle className="h-24 w-24 text-accent mb-4" />
-            <h1 className="text-5xl md:text-7xl font-['Lacquer',_cursive] text-primary mb-6 drop-shadow-lg animate-text-flicker">
-              Escape Rooms de Terror
-            </h1>
-            <p className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto mb-8 drop-shadow-md">
-               La tensión aumenta con cada segundo. ¿Podrás resolver los enigmas y escapar a tiempo?
+       <ParallaxBanner 
+        imageUrl="/bd8f6f72-46e5-4169-adef-4ed8af1de77e.jpg" 
+        dataAiHint="dark escape room door"
+      >
+        <div className="relative z-20 text-center flex flex-col items-center justify-center h-screen min-h-[600px] bg-black/70 p-8 animate-fade-in">
+          <Puzzle className="h-24 w-24 text-accent mb-4" />
+          <h1 className="text-5xl md:text-7xl font-horror text-red-600 mb-6 drop-shadow-lg animate-text-flicker">
+            Escape Rooms de Terror
+          </h1>
+          <p className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto mb-8 drop-shadow-md">
+            La tensión aumenta con cada segundo. ¿Podrás resolver los enigmas y escapar a tiempo?
+          </p>
+          <div className="mt-4 bg-red-950/30 p-4 rounded-lg max-w-2xl">
+            <p className="text-sm text-red-200">
+              Combina el ingenio con el terror en nuestras salas de escape temáticas.
+              60 minutos para resolver el misterio... si los nervios te lo permiten.
             </p>
+          </div>
         </div>
       </ParallaxBanner>
       
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 space-y-8 bg-scratches rounded-lg my-12">
-        <h2 className="text-4xl font-['Lacquer',_cursive] text-center text-primary">El Misterio Llama a tu Puerta</h2>
-         <div className="max-w-4xl mx-auto text-lg text-left md:text-center space-y-4 text-muted-foreground leading-relaxed">
+        <h2 className="text-4xl font-horror text-red-600 text-center mb-6">El Misterio Llama a tu Puerta</h2>
+         <div className="max-w-4xl mx-auto text-lg text-left md:text-center space-y-4 text-foreground leading-relaxed">
           <p>
            Nuestras escape rooms temáticas de terror van un paso más allá de los candados y las llaves. Sumérgete en historias complejas y atmósferas opresivas donde el ingenio es tan importante como el valor.
           </p>

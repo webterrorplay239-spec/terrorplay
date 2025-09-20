@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { Calendar, Users, Mail, Menu, ChevronDown, Clapperboard, Puzzle, Drama, Ticket } from 'lucide-react';
+import { Calendar, Users, Mail, Menu, ChevronDown, Clapperboard, Puzzle, Drama, Ticket, Skull } from 'lucide-react';
 import NeonLogo from './icons/NeonLogo';
 import { Button } from './ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from './ui/sheet';
@@ -21,6 +21,7 @@ const mainNavItems = [
 ];
 
 const eventNavItems = [
+    { href: '/eventos/extreme-house', label: 'Extreme House', icon: Skull },
     { href: '/eventos/pasajes-del-terror', label: 'Pasajes del Terror', icon: Clapperboard },
     { href: '/eventos/escape-rooms', label: 'Escape Rooms', icon: Puzzle },
     { href: '/eventos/cenas-de-misterio', label: 'Cenas de Misterio', icon: Drama },

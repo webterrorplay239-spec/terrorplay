@@ -124,6 +124,36 @@ const config = {
           '0%': { backgroundPosition: '0 0' },
           '100%': { backgroundPosition: '0 100%' },
         },
+        'flash': {
+          '0%': { 
+            opacity: '0',
+            transform: 'scale(0.95)',
+          },
+          '5%': {
+            opacity: '0.9',
+            transform: 'scale(1.05)',
+          },
+          '10%': {
+            opacity: '0.2',
+            transform: 'scale(1)',
+          },
+          '15%': {
+            opacity: '0.8',
+            transform: 'scale(1.02)',
+          },
+          '25%': {
+            opacity: '0.3',
+            transform: 'scale(0.98)',
+          },
+          '35%': {
+            opacity: '0.7',
+            transform: 'scale(1.01)',
+          },
+          '100%': {
+            opacity: '0',
+            transform: 'scale(1)',
+          }
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -134,6 +164,7 @@ const config = {
         'text-flicker': 'text-flicker 5s linear infinite',
         'glitch': 'glitch 1.5s steps(1, end) infinite',
         'scanlines': 'scanlines 10s linear infinite',
+        'flash': 'flash 1s cubic-bezier(0.4, 0, 0.6, 1) both',
       },
       backgroundImage: {
         'scratches': "repeating-linear-gradient(45deg, transparent, transparent 10px, hsla(0,0%,0%,.1) 10px, hsla(0,0%,0%,.1) 12px), repeating-linear-gradient(135deg, transparent, transparent 5px, hsla(0,0%,0%,.05) 5px, hsla(0,0%,0%,.05) 7px), radial-gradient(circle at 10% 20%, hsl(var(--primary) / 0.1), transparent 20%), radial-gradient(circle at 80% 50%, hsl(var(--primary) / 0.08), transparent 25%)",

@@ -11,10 +11,20 @@ const messages = [
   { text: "FALLO CATASTRÓFICO", duration: 1000 },
   { text: "CARGANDO TERROR...", duration: 1500 },
   { text: "NO PUEDES ESCAPAR", duration: 1000 },
+  { text: "ERROR CRÍTICO", duration: 1200 },
+];
+
+const horrorImages = [
+  "/casa-embrujada-en-estilo-gotico.jpg",
+  "/hombre-espeluznante-con-la-cara-ensangrentada.jpg",
+  "/vista-frontal-personaje-espeluznante-posando.jpg",
+  "/retrato-de-payaso-aterrador.jpg",
+  "/ojos-de-zombi-de-cerca.jpg"
 ];
 
 const HorrorIntro = ({ onFinished }: HorrorIntroProps) => {
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showLogo, setShowLogo] = useState(false);
   const [fadingOut, setFadingOut] = useState(false);
 
@@ -30,20 +40,48 @@ const HorrorIntro = ({ onFinished }: HorrorIntroProps) => {
       }, 500);
       return () => clearTimeout(logoTimer);
     } else {
-        const finishTimer = setTimeout(() => {
-            setFadingOut(true);
-            setTimeout(onFinished, 1000); // Wait for fade out animation
-        }, 2000);
-        return () => clearTimeout(finishTimer);
+      const finishTimer = setTimeout(() => {
+        setFadingOut(true);
+        setTimeout(onFinished, 1000); // Wait for fade out animation
+      }, 2000);
+      return () => clearTimeout(finishTimer);
     }
   }, [currentMessageIndex, showLogo, onFinished]);
+
+  // Efecto para cambiar las imágenes
+  useEffect(() => {
+    if (!showLogo) {
+      const imageTimer = setTimeout(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % horrorImages.length);
+      }, 800); // Cambia cada 800ms para un efecto más rápido
+      return () => clearTimeout(imageTimer);
+    }
+  }, [currentImageIndex, showLogo]);
 
   return (
     <div className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black transition-opacity duration-1000 ${fadingOut ? 'opacity-0' : 'opacity-100'}`}>
       <div className="absolute inset-0 bg-black opacity-50 scanlines pointer-events-none"></div>
       
+      {!showLogo && (
+        <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+          <img 
+            src={horrorImages[currentImageIndex]} 
+            alt="Horror flash"
+            className="absolute inset-0 w-full h-full object-cover animate-flash"
+            style={{
+              filter: 'brightness(1.2) contrast(1.2) saturate(1.2)',
+              mixBlendMode: 'luminosity'
+            }}
+            key={currentImageIndex} // Para forzar la re-animación
+          />
+          <div className="absolute inset-0 bg-red-900/20 mix-blend-overlay animate-flash" 
+               key={`overlay-${currentImageIndex}`}>
+          </div>
+        </div>
+      )}
+      
       {!showLogo ? (
-        <div className="font-mono text-2xl md:text-4xl text-red-500 animate-glitch-text p-4">
+        <div className="relative z-10 font-mono text-2xl md:text-4xl text-red-500 animate-glitch-text p-4 drop-shadow-[0_0_10px_rgba(220,38,38,0.5)]">
             {'> '}{messages[currentMessageIndex]?.text}
             <span className="animate-ping">_</span>
         </div>

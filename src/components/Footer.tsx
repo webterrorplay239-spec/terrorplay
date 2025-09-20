@@ -36,7 +36,22 @@ export default function Footer() {
             </Button>
           ))}
         </div>
-        <p className="text-sm">
+        <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs">
+          <Link href="/aviso-legal" className="hover:text-primary transition-colors">
+            Aviso Legal
+          </Link>
+          <Link href="/privacidad" className="hover:text-primary transition-colors">
+            Política de Privacidad
+          </Link>
+          <Link href="/cookies" className="hover:text-primary transition-colors">
+            Política de Cookies
+          </Link>
+          <Link href="/accesibilidad" className="hover:text-primary transition-colors">
+            Accesibilidad
+          </Link>
+        </div>
+        
+        <p className="text-sm mt-6">
           &copy; {new Date().getFullYear()} TerrorPlay. Todos los derechos reservados.
         </p>
         <p className="text-xs mt-2">

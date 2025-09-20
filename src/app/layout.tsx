@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import CreepyMusic from '@/components/CreepyMusic';
+import { CookieBanner } from '@/components/CookieBanner';
 
 export const metadata: Metadata = {
   title: 'TerrorPlay - Eventos y Animaciones de Terror para Halloween',
@@ -31,6 +32,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <WhatsAppButton phoneNumber="+34000000000" message="Hola! Me gustaría pedir presupuesto para un evento de terror." />
+        <CookieBanner />
         <Toaster />
       </body>
     </html>

@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -5,29 +7,33 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ParallaxBanner } from '@/components/ParallaxBanner';
 import { Drama, MessageSquareQuote, Skull, PartyPopper } from 'lucide-react';
 
-export const metadata = {
-  title: 'Cenas de Misterio y Cluedo en Vivo - Eventos de Empresa y Fiestas',
-  description: 'Organizamos cenas de misterio y cluedos en vivo para team building, cumpleaños y fiestas privadas. Una noche de intriga, sospechas y un asesinato por resolver.',
-};
-
 export default function CenasDeMisterioPage() {
   return (
     <div className="space-y-0">
-       <ParallaxBanner imageUrl="https://placehold.co/1200x800.png" dataAiHint="elegant mystery dinner">
-        <div className="relative z-20 text-center flex flex-col items-center justify-center h-full bg-black/70 p-8 animate-fade-in">
-            <Drama className="h-24 w-24 text-accent mb-4" />
-            <h1 className="text-5xl md:text-7xl font-['Lacquer',_cursive] text-primary mb-6 drop-shadow-lg animate-text-flicker">
-              Cenas de Misterio
-            </h1>
-            <p className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto mb-8 drop-shadow-md">
-               Un asesinato, un grupo de sospechosos y una cena deliciosa. ¿Quién es el culpable?
+       <ParallaxBanner 
+        imageUrl="/Gemini_Generated_Image_vlzx92vlzx92vlzx.png" 
+        dataAiHint="elegant mystery dinner"
+      >
+        <div className="relative z-20 text-center flex flex-col items-center justify-center h-screen min-h-[600px] bg-black/70 p-8 animate-fade-in">
+          <Drama className="h-24 w-24 text-accent mb-4" />
+          <h1 className="text-5xl md:text-7xl font-horror text-red-600 mb-6 drop-shadow-lg animate-text-flicker">
+            Cenas de Misterio
+          </h1>
+          <p className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto mb-8 drop-shadow-md">
+            Un asesinato, un grupo de sospechosos y una cena deliciosa. ¿Quién es el culpable?
+          </p>
+          <div className="mt-4 bg-red-950/30 p-4 rounded-lg max-w-2xl">
+            <p className="text-sm text-red-200">
+              Sumérgete en una noche de intriga, secretos y conspiraciones.
+              Cada invitado es un sospechoso, y el asesino está entre nosotros.
             </p>
+          </div>
         </div>
       </ParallaxBanner>
       
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 space-y-8 bg-scratches rounded-lg my-12">
-        <h2 className="text-4xl font-['Lacquer',_cursive] text-center text-primary">Una Velada de Intriga Inolvidable</h2>
-        <div className="max-w-4xl mx-auto text-lg text-left md:text-center space-y-4 text-muted-foreground leading-relaxed">
+        <h2 className="text-4xl font-horror text-red-600 text-center mb-6">Una Velada de Intriga Inolvidable</h2>
+        <div className="max-w-4xl mx-auto text-lg text-left md:text-center space-y-4 text-foreground leading-relaxed">
           <p>
             Disfruta de una velada diferente con nuestras cenas de misterio y cluedos en vivo. Cada invitado recibe un papel y un conjunto de objetivos, pero uno de vosotros es un asesino. 
           </p>

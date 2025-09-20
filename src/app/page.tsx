@@ -28,20 +28,34 @@ export default function HomePage() {
   return (
     <div className="space-y-0">
       {/* Hero Section */}
-      <ParallaxBanner imageUrl="https://placehold.co/1200x800.png" dataAiHint="dark atmospheric horror">
-        <div className="relative z-20 text-center flex flex-col items-center justify-center h-full bg-black/70 p-8 animate-fade-in">
-            <img src="/logo.png" alt="TerrorPlay Logo" className="w-48 h-48 md:w-64 md:h-64 animate-pulse" />
-            <h1 className="text-5xl md:text-7xl font-['Lacquer',_cursive] text-primary mb-6 drop-shadow-lg animate-text-flicker">
-              Creamos Eventos de Terror Inolvidables
-            </h1>
-            <p className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto mb-8 drop-shadow-md">
-              Desde pasajes del terror y escape rooms hasta cenas de misterio. Damos vida a tus peores pesadillas para que disfrutes de una experiencia única.
+      <ParallaxBanner 
+        imageUrl="/0964ab83-35e1-4b7a-969b-eb4fbc526596.jpg"
+        dataAiHint="dark atmospheric horror"
+      >
+        <div className="relative z-20 text-center flex flex-col items-center justify-center h-screen min-h-[600px] bg-black/70 p-8 animate-fade-in">
+          <img src="/logo.png" alt="TerrorPlay Logo" className="w-48 h-48 md:w-64 md:h-64 animate-pulse" />
+          <h1 className="text-5xl md:text-7xl font-horror text-red-600 mb-6 drop-shadow-lg animate-text-flicker">
+            Creamos Eventos de Terror Inolvidables
+          </h1>
+          <p className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto mb-8 drop-shadow-md">
+            Desde pasajes del terror y escape rooms hasta cenas de misterio. 
+            Damos vida a tus peores pesadillas para que disfrutes de una experiencia única.
+          </p>
+          <div className="mt-4 bg-red-950/30 p-4 rounded-lg max-w-2xl">
+            <p className="text-sm text-red-200">
+              Especialistas en crear experiencias terroríficas a medida para eventos,
+              fiestas y celebraciones especiales.
             </p>
-            <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg animate-pulse">
-              <Link href="/contacto">
-                Solicita tu Presupuesto
-              </Link>
-            </Button>
+          </div>
+          <Button 
+            size="lg" 
+            asChild 
+            className="mt-8 bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full shadow-lg transform transition hover:scale-105"
+          >
+            <Link href="/contacto">
+              Solicita tu Presupuesto
+            </Link>
+          </Button>
         </div>
       </ParallaxBanner>
 
@@ -80,36 +94,42 @@ export default function HomePage() {
       {/* Our Events Section */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
         <div className="relative animate-slide-up">
-            <h2 className="text-4xl font-['Lacquer',_cursive] text-center text-primary">Nuestros Eventos de Terror</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Creamos todo tipo de experiencias de miedo. Aquí tienes algunos ejemplos.</p>
+            <h2 className="text-4xl font-horror text-red-600 text-center mb-4">Nuestros Eventos de Terror</h2>
+            <p className="text-lg text-foreground max-w-3xl mx-auto">Desde experiencias extremas hasta juegos de misterio, tenemos el evento perfecto para cada tipo de público y ocasión.</p>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-8 pt-12 max-w-5xl mx-auto">
           <EventCard
-            imageSrc="https://placehold.co/600x400.png"
-            imageHint="haunted house passage"
-            title="Pasajes del Terror"
-            description="Recorridos inmersivos llenos de sustos, actores y efectos especiales. Ideal para fiestas de Halloween, ayuntamientos y centros comerciales."
+            imageSrc="/78042.jpg"
+            imageHint="extreme house terror"
+            title="Extreme House"
+            description="La experiencia de terror definitiva. Adéntrate en un mundo de pesadilla donde tus peores miedos cobran vida. No apto para sensibles."
+            href="/eventos/extreme-house"
             animationDelay="0.2s"
           />
           <EventCard
-            imageSrc="https://placehold.co/600x400.png"
+            imageSrc="/229f6432-7b10-4354-ad95-9103e3bcdb4a.jpg"
+            imageHint="haunted house passage"
+            title="Pasajes del Terror"
+            description="Recorridos inmersivos llenos de sustos, actores y efectos especiales. Ideal para fiestas de Halloween, ayuntamientos y centros comerciales."
+            href="/eventos/pasajes-del-terror"
+            animationDelay="0.3s"
+          />
+          <EventCard
+            imageSrc="/bd8f6f72-46e5-4169-adef-4ed8af1de77e.jpg"
             imageHint="escape room dark"
             title="Escape Rooms Temáticos"
             description="Nuestros game masters os guiarán (o atormentarán) a través de un misterio que deberéis resolver antes de que sea tarde. Experiencias portátiles."
-             animationDelay="0.4s"
+            href="/eventos/escape-rooms"
+            animationDelay="0.4s"
           />
           <EventCard
-            imageSrc="https://placehold.co/600x400.png"
+            imageSrc="/Gemini_Generated_Image_vlzx92vlzx92vlzx.png"
             imageHint="murder mystery dinner"
             title="Cenas de Misterio"
             description="Una cena donde nada es lo que parece y uno de los comensales es un asesino. Perfecto para eventos de empresa y grupos que buscan algo original."
-            animationDelay="0.6s"
+            href="/eventos/cenas-de-misterio"
+            animationDelay="0.5s"
           />
-        </div>
-        <div className="mt-12 animate-slide-up" style={{animationDelay: "0.8s"}}>
-            <Button variant="outline" asChild>
-                <Link href="/eventos">Ver todos los servicios de animación</Link>
-            </Button>
         </div>
       </section>
       
@@ -185,14 +205,16 @@ interface EventCardProps {
   imageHint: string;
   title: string;
   description: string;
+  href: string;
   animationDelay?: string;
 }
 
-function EventCard({ imageSrc, imageHint, title, description, animationDelay }: EventCardProps) {
+function EventCard({ imageSrc, imageHint, title, description, href, animationDelay }: EventCardProps) {
   return (
-    <Card className="text-left overflow-hidden transform transition-transform hover:scale-105 duration-300 bg-scratches border-border/50 group animate-slide-up" style={{ animationDelay }}>
-       <div className="relative overflow-hidden">
-        <Image 
+    <Link href={href}>
+      <Card className="text-left overflow-hidden transform transition-transform hover:scale-105 duration-300 bg-scratches border-border/50 group animate-slide-up cursor-pointer" style={{ animationDelay }}>
+        <div className="relative overflow-hidden">
+          <Image 
             src={imageSrc}
             width={600}
             height={400}
@@ -200,18 +222,18 @@ function EventCard({ imageSrc, imageHint, title, description, animationDelay }: 
             className="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110 group-hover:blur-sm group-hover:brightness-50"
             data-ai-hint={imageHint}
           />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-glitch">
-            <p className="text-white text-2xl font-['Lacquer',_cursive] drop-shadow-lg">Ver Más</p>
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-glitch">
+          </div>
         </div>
-      </div>
-      <CardHeader>
-        <CardTitle className="font-['Lacquer',_cursive] text-2xl">{title}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p className="text-muted-foreground">{description}</p>
-      </CardContent>
-    </Card>
+        <CardHeader>
+          <CardTitle className="font-horror text-2xl text-red-600">{title}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-foreground">{description}</p>
+        </CardContent>
+      </Card>
+    </Link>
   );
 }
 
