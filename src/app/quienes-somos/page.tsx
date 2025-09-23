@@ -21,7 +21,7 @@ export default function QuienesSomosPage() {
       <section className="grid md:grid-cols-2 gap-8 items-center animate-slide-up bg-scratches p-6 rounded-lg">
         <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
           <Image
-            src="https://placehold.co/600x800.png"
+            src="/quienessomos.jpg"
             alt="Equipo de TerrorPlay"
             layout="fill"
             objectFit="cover"
