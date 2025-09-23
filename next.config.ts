@@ -17,12 +17,11 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
+    formats: ['image/webp', 'image/avif'],
+    dangerouslyAllowSVG: true,
   },
-  devIndicators: {
-    allowedDevOrigins: [
-      '6000-firebase-studio-1749412697954.cluster-ombtxv25tbd6yrjpp3lukp6zhc.cloudworkstations.dev',
-    ],
-  },
+  assetPrefix: process.env.NODE_ENV === 'production' ? '' : '',
+  trailingSlash: false,
 };
 
 export default nextConfig;

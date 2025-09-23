@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Facebook, Instagram, Twitter } from "lucide-react";
 import { Button } from "./ui/button";
 
@@ -26,7 +27,7 @@ export default function Footer() {
     <footer className="bg-card/50 border-t border-border/50 py-8 text-center text-muted-foreground">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center space-x-4 mb-4">
-          <img src="/logo.png" alt="TerrorPlay Logo" className="h-12 w-auto" />
+          <Image src="/logo.png" alt="TerrorPlay Logo" width={48} height={48} className="h-12 w-auto" />
           {socialLinks.map((social) => (
             <Button key={social.name} variant="ghost" size="icon" asChild>
               <Link href={social.href} target="_blank" rel="noopener noreferrer">

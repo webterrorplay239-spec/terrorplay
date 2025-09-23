@@ -33,7 +33,7 @@ export default function HomePage() {
         dataAiHint="dark atmospheric horror"
       >
         <div className="relative z-20 text-center flex flex-col items-center justify-center h-screen min-h-[600px] bg-black/70 p-8 animate-fade-in">
-          <img src="/logo.png" alt="TerrorPlay Logo" className="w-48 h-48 md:w-64 md:h-64 animate-pulse" />
+          <Image src="/logo.png" alt="TerrorPlay Logo" width={256} height={256} className="w-48 h-48 md:w-64 md:h-64 animate-pulse" />
           <h1 className="text-5xl md:text-7xl font-horror text-red-600 mb-6 drop-shadow-lg animate-text-flicker">
             Creamos Eventos de Terror Inolvidables
           </h1>
