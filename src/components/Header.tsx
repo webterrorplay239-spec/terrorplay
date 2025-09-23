@@ -37,7 +37,7 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center space-x-2 group" aria-label="TerrorPlay Home">
-            <Image src="/logo.png" alt="TerrorPlay Logo" width={48} height={48} className="h-12 w-auto" />
+            <Image src="/logo.png" alt="TerrorPlay Logo" width={48} height={48} className="h-12 w-12 object-contain" priority unoptimized />
           </Link>
 
           {/* Desktop Navigation */}

@@ -113,7 +113,7 @@ const HorrorIntro = ({ onFinished }: HorrorIntroProps) => {
         </div>
       ) : (
         <div className="flex flex-col items-center animate-fade-in">
-             <NextImage src="/logo.png" alt="TerrorPlay Logo" width={256} height={256} className="w-48 h-48 md:w-64 md:h-64 animate-pulse" />
+             <NextImage src="/logo.png" alt="TerrorPlay Logo" width={256} height={256} className="w-48 h-48 md:w-64 md:h-64 animate-pulse object-contain" priority unoptimized />
              <h1 className="text-6xl md:text-8xl font-['Lacquer',_cursive] text-primary mt-4 animate-text-flicker">TERRORPLAY</h1>
         </div>
       )}
