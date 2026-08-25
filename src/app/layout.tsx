@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import CreepyMusic from '@/components/CreepyMusic';
 import { CookieBanner } from '@/components/CookieBanner';
-import { SITE_URL, CONTACT_EMAIL, CONTACT_PHONE, WHATSAPP_PHONE } from '@/lib/site';
+import { SITE_URL, CONTACT_EMAIL, CONTACT_PHONE, WHATSAPP_PHONE, INSTAGRAM_URL } from '@/lib/site';
 
 // El dominio se define en src/lib/site.ts (variable NEXT_PUBLIC_SITE_URL).
 
@@ -68,6 +68,7 @@ const jsonLd = {
     addressCountry: 'ES',
   },
   areaServed: { '@type': 'AdministrativeArea', name: 'Andalucía' },
+  sameAs: [INSTAGRAM_URL],
 };
 
 export default function RootLayout({

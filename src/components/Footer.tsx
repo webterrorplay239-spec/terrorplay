@@ -1,15 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Instagram } from "lucide-react";
+import { INSTAGRAM_URL } from "@/lib/site";
 import { Button } from "./ui/button";
 
-// TODO: pon aquí las URLs reales de los perfiles.
-// Las entradas con href vacío no se muestran (mejor ningún icono que uno
-// que lleve a la portada genérica de la red social).
+// Perfiles reales. Para añadir otra red, impórtala de lucide-react y
+// agrégala aquí; las entradas con href vacío no se muestran.
 const socialLinks = [
-  { name: "Instagram", href: "", icon: Instagram },
-  { name: "Facebook", href: "", icon: Facebook },
-  { name: "Twitter / X", href: "", icon: Twitter },
+  { name: "Instagram", href: INSTAGRAM_URL, icon: Instagram },
 ].filter((social) => social.href !== "");
 
 
