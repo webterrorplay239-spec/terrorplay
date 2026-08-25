@@ -17,6 +17,11 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        horror: ["'Lacquer'", 'system-ui', 'cursive'],
+        headline: ["'Lacquer'", 'system-ui', 'cursive'],
+        body: ["'Alegreya'", 'Georgia', 'serif'],
+      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

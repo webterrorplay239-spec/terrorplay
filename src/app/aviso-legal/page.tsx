@@ -1,6 +1,13 @@
-"use client";
-
 import { ParallaxBanner } from "@/components/ParallaxBanner";
+
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Aviso Legal',
+  description: 'Aviso legal y condiciones de uso de la web de TerrorPlay, marca de Good Party (Sevilla).',
+  alternates: { canonical: '/aviso-legal' },
+  robots: { index: false, follow: true },
+};
 
 export default function AvisoLegalPage() {
   return (
@@ -17,13 +24,19 @@ export default function AvisoLegalPage() {
         <section className="mb-8">
           <h3 className="text-xl font-bold mb-4">Identificación</h3>
           <ul>
-            <li>Razón Social: M. Pilar Barradas</li>
+            <li>Razón Social: María del Pilar Barradas González</li>
             <li>Nombre comercial: Good Party</li>
+            <li>Marca: TerrorPlay es la línea de eventos de terror de Good Party</li>
             <li>CIF: 48656935K</li>
-            <li>Domicilio social: Calle José Rodríguez Rodri 41980 La Algaba (Sevilla)</li>
+            <li>Domicilio social: Calle José Rodríguez Rodri, 37 – 41980 La Algaba (Sevilla)</li>
             <li>Actividad: Eventos</li>
             <li>Correo electrónico: info@goodparty.es</li>
+            <li>Teléfono: 653 336 695</li>
           </ul>
+          <p className="mt-4 text-sm text-white/80">
+            TerrorPlay es una marca de Good Party. Todas las referencias a Good Party
+            o a goodparty.es en este aviso legal aplican igualmente a este sitio web.
+          </p>
         </section>
 
         <section className="mb-8">

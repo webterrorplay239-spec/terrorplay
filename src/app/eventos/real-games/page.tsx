@@ -8,15 +8,16 @@ import { Ghost, MessageSquareQuote, Skull, ShieldQuestion, Footprints } from 'lu
 export const metadata = {
   title: 'Real Games y Supervivencia Zombie - Adrenalina a Gran Escala',
   description: 'Participa en nuestros Real Games y eventos de Supervivencia Zombie. Eventos a gran escala donde tendrás que cumplir misiones, sobrevivir y evitar a las hordas.',
+  alternates: { canonical: '/eventos/real-games' },
 };
 
 export default function RealGamesPage() {
   return (
     <div className="space-y-0">
-       <ParallaxBanner imageUrl="https://placehold.co/1200x800.png" dataAiHint="zombie apocalypse street">
-        <div className="relative z-20 text-center flex flex-col items-center justify-center h-full bg-black/70 p-8 animate-fade-in">
+       <ParallaxBanner imageUrl="/hombre-espeluznante-con-la-cara-ensangrentada.jpg" dataAiHint="zombie apocalypse street">
+        <div className="relative z-20 text-center flex flex-col items-center justify-center w-full min-h-[calc(100vh-5rem)] bg-black/70 p-8 py-16 animate-fade-in">
             <Ghost className="h-24 w-24 text-accent mb-4" />
-            <h1 className="text-5xl md:text-7xl font-['Lacquer',_cursive] text-primary mb-6 drop-shadow-lg animate-text-flicker">
+            <h1 className="text-5xl md:text-7xl font-horror text-primary mb-6 drop-shadow-lg animate-text-flicker">
               Supervivencia Zombie
             </h1>
             <p className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto mb-8 drop-shadow-md">
@@ -26,7 +27,7 @@ export default function RealGamesPage() {
       </ParallaxBanner>
       
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 space-y-8 bg-scratches rounded-lg my-12">
-        <h2 className="text-4xl font-['Lacquer',_cursive] text-center text-primary">Tu Pueblo, Nuestro Campo de Batalla</h2>
+        <h2 className="text-4xl font-horror text-center text-primary">Tu Pueblo, Nuestro Campo de Batalla</h2>
         <div className="max-w-4xl mx-auto text-lg text-left md:text-center space-y-4 text-muted-foreground leading-relaxed">
           <p>
             Nuestros Real Games transforman pueblos enteros, grandes recintos o fincas en un escenario de película. Durante horas, los participantes se sumergen en una trama apocalíptica donde cada decisión cuenta.
@@ -41,7 +42,7 @@ export default function RealGamesPage() {
 
        <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
         <div className="relative animate-slide-up">
-          <h2 className="text-4xl font-['Lacquer',_cursive] text-center text-primary">Las Claves de la Supervivencia</h2>
+          <h2 className="text-4xl font-horror text-center text-primary">Las Claves de la Supervivencia</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Más que un juego, una experiencia de supervivencia inmersiva.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8 pt-12">
@@ -70,7 +71,7 @@ export default function RealGamesPage() {
       
        <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
          <div className="relative animate-slide-up">
-            <h2 className="text-4xl font-['Lacquer',_cursive] text-center text-primary">Opiniones de los Supervivientes</h2>
+            <h2 className="text-4xl font-horror text-center text-primary">Opiniones de los Supervivientes</h2>
          </div>
          <div className="grid md:grid-cols-2 gap-8 pt-12 max-w-4xl mx-auto">
             <TestimonialCard
@@ -89,7 +90,7 @@ export default function RealGamesPage() {
       <SectionDivider />
 
        <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center bg-scratches my-12 rounded-lg shadow-xl animate-slide-up">
-          <h3 className="text-3xl font-['Lacquer',_cursive] text-primary mb-4">¿Listo para el Fin del Mundo?</h3>
+          <h3 className="text-3xl font-horror text-primary mb-4">¿Listo para el Fin del Mundo?</h3>
           <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
             Contacta con nosotros para organizar un Real Game o Supervivencia Zombie en tu localidad. La adrenalina está garantizada.
           </p>
@@ -126,7 +127,7 @@ function HowItWorksStep({ icon, title, description, animationDelay }: HowItWorks
   return (
     <div className="flex flex-col items-center space-y-3 p-4 rounded-lg transition-all duration-300 hover:bg-card/50 animate-slide-up" style={{ animationDelay }}>
       <div className="p-4 bg-card rounded-full">{icon}</div>
-      <h3 className="text-2xl font-['Lacquer',_cursive]">{title}</h3>
+      <h3 className="text-2xl font-horror">{title}</h3>
       <p className="text-muted-foreground">{description}</p>
     </div>
   );
@@ -146,7 +147,7 @@ function TestimonialCard({ quote, author, animationDelay }: TestimonialCardProps
                 <blockquote className="text-lg italic border-l-4 border-accent pl-4">
                     {quote}
                 </blockquote>
-                <p className="text-right font-['Lacquer',_cursive] text-primary">— {author}</p>
+                <p className="text-right font-horror text-primary">— {author}</p>
             </CardContent>
         </Card>
     )

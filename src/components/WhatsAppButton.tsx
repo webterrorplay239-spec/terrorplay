@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { WHATSAPP_PHONE } from "@/lib/site";
 
 interface WhatsAppButtonProps {
     phoneNumber: string;
@@ -21,10 +22,11 @@ const WhatsAppIcon = () => (
 )
 
 export default function WhatsAppButton({ phoneNumber, message }: WhatsAppButtonProps) {
-    // Siempre usar el número correcto si no se pasa explícitamente
-    const finalNumber = phoneNumber && phoneNumber.trim() !== '' ? phoneNumber : '34653336695';
+    // Normaliza el número: wa.me no admite '+', espacios ni guiones
+    const cleaned = (phoneNumber || '').replace(/[^0-9]/g, '');
+    const finalNumber = cleaned.length >= 9 ? cleaned : WHATSAPP_PHONE;
     const encodedMessage = encodeURIComponent(message || 'Hola! Me gustaría pedir presupuesto para un evento de terror.');
-    const href = `https://wa.me/34653336695?text=${encodedMessage}`;
+    const href = `https://wa.me/${finalNumber}?text=${encodedMessage}`;
     return (
         <Link 
             href={href}

@@ -1,6 +1,13 @@
-"use client";
-
 import { ParallaxBanner } from "@/components/ParallaxBanner";
+
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Declaración de Accesibilidad',
+  description: 'Declaración de accesibilidad de la web de TerrorPlay: nivel de conformidad, contenido no accesible y vía de contacto para incidencias.',
+  alternates: { canonical: '/accesibilidad' },
+  robots: { index: false, follow: true },
+};
 
 export default function AccesibilidadPage() {
   return (

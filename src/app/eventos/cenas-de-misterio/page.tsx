@@ -1,11 +1,17 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ParallaxBanner } from '@/components/ParallaxBanner';
 import { Drama, MessageSquareQuote, Skull, PartyPopper } from 'lucide-react';
+
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Cenas de Misterio y Cluedo en Vivo',
+  description: 'Organizamos cenas de misterio y cluedos en vivo para team building, cumpleaños y fiestas privadas. Una noche de intriga, sospechas y un asesinato por resolver.',
+  alternates: { canonical: '/eventos/cenas-de-misterio' },
+};
 
 export default function CenasDeMisterioPage() {
   return (
@@ -14,7 +20,7 @@ export default function CenasDeMisterioPage() {
         imageUrl="/Gemini_Generated_Image_vlzx92vlzx92vlzx.png" 
         dataAiHint="elegant mystery dinner"
       >
-        <div className="relative z-20 text-center flex flex-col items-center justify-center h-screen min-h-[600px] bg-black/70 p-8 animate-fade-in">
+        <div className="relative z-20 text-center flex flex-col items-center justify-center w-full min-h-[calc(100vh-5rem)] py-16 bg-black/70 p-8 animate-fade-in">
           <Drama className="h-24 w-24 text-accent mb-4" />
           <h1 className="text-5xl md:text-7xl font-horror text-red-600 mb-6 drop-shadow-lg animate-text-flicker">
             Cenas de Misterio
@@ -47,7 +53,7 @@ export default function CenasDeMisterioPage() {
 
        <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
         <div className="relative animate-slide-up">
-          <h2 className="text-4xl font-['Lacquer',_cursive] text-center text-primary">Organizamos tu Noche de Misterio</h2>
+          <h2 className="text-4xl font-horror text-center text-primary">Organizamos tu Noche de Misterio</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Nos encargamos de todo para que solo te preocupes de acusar (o de no ser descubierto).</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8 pt-12">
@@ -76,7 +82,7 @@ export default function CenasDeMisterioPage() {
       
        <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
          <div className="relative animate-slide-up">
-            <h2 className="text-4xl font-['Lacquer',_cursive] text-center text-primary">Opiniones de Nuestros Clientes</h2>
+            <h2 className="text-4xl font-horror text-center text-primary">Opiniones de Nuestros Clientes</h2>
          </div>
          <div className="grid md:grid-cols-2 gap-8 pt-12 max-w-4xl mx-auto">
             <TestimonialCard
@@ -95,7 +101,7 @@ export default function CenasDeMisterioPage() {
       <SectionDivider />
 
        <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center bg-scratches my-12 rounded-lg shadow-xl animate-slide-up">
-          <h3 className="text-3xl font-['Lacquer',_cursive] text-primary mb-4">¿Listo para Resolver el Crimen?</h3>
+          <h3 className="text-3xl font-horror text-primary mb-4">¿Listo para Resolver el Crimen?</h3>
           <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
             Contacta con nosotros para organizar una cena de misterio o cluedo en vivo. La excusa perfecta para una noche diferente, original y muy entretenida.
           </p>
@@ -132,7 +138,7 @@ function HowItWorksStep({ icon, title, description, animationDelay }: HowItWorks
   return (
     <div className="flex flex-col items-center space-y-3 p-4 rounded-lg transition-all duration-300 hover:bg-card/50 animate-slide-up" style={{ animationDelay }}>
       <div className="p-4 bg-card rounded-full">{icon}</div>
-      <h3 className="text-2xl font-['Lacquer',_cursive]">{title}</h3>
+      <h3 className="text-2xl font-horror">{title}</h3>
       <p className="text-muted-foreground">{description}</p>
     </div>
   );
@@ -152,7 +158,7 @@ function TestimonialCard({ quote, author, animationDelay }: TestimonialCardProps
                 <blockquote className="text-lg italic border-l-4 border-accent pl-4">
                     {quote}
                 </blockquote>
-                <p className="text-right font-['Lacquer',_cursive] text-primary">— {author}</p>
+                <p className="text-right font-horror text-primary">— {author}</p>
             </CardContent>
         </Card>
     )

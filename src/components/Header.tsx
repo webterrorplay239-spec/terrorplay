@@ -2,8 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Calendar, Users, Mail, Menu, ChevronDown, Clapperboard, Puzzle, Drama, Ticket, Skull } from 'lucide-react';
-import NeonLogo from './icons/NeonLogo';
+import { Calendar, Users, Mail, Menu, ChevronDown, Clapperboard, Puzzle, Drama, Ticket, Skull, Footprints } from 'lucide-react';
 import { Button } from './ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from './ui/sheet';
 import {
@@ -26,6 +25,8 @@ const eventNavItems = [
     { href: '/eventos/pasajes-del-terror', label: 'Pasajes del Terror', icon: Clapperboard },
     { href: '/eventos/escape-rooms', label: 'Escape Rooms', icon: Puzzle },
     { href: '/eventos/cenas-de-misterio', label: 'Cenas de Misterio', icon: Drama },
+    { href: '/eventos/real-games', label: 'Real Games y Zombies', icon: Footprints },
+    { href: '/eventos', label: 'Ver todos los eventos', icon: Calendar },
 ];
 
 export default function Header() {
@@ -73,7 +74,7 @@ export default function Header() {
             
             <Button onClick={() => setTicketModalOpen(true)} className="ml-4 bg-primary hover:bg-primary/90 text-primary-foreground">
               <Ticket className="h-5 w-5 mr-2" />
-              Compra tus Entradas
+              Reserva tus Entradas
             </Button>
             
           </nav>
@@ -93,14 +94,15 @@ export default function Header() {
                 </SheetHeader>
                 <nav className="flex flex-col space-y-2 mt-8">
                    
-                   <Button onClick={() => {
-                     const closeButton = document.querySelector('[data-radix-collection-item]')?.closest('button');
-                     if (closeButton) closeButton.click();
-                     setTicketModalOpen(true)
-                    }} className="mb-4 bg-primary hover:bg-primary/90 text-primary-foreground">
-                      <Ticket className="h-5 w-5 mr-2" />
-                      Compra tus Entradas
-                   </Button>
+                   <SheetClose asChild>
+                     <Button
+                       onClick={() => setTicketModalOpen(true)}
+                       className="mb-4 bg-primary hover:bg-primary/90 text-primary-foreground"
+                     >
+                        <Ticket className="h-5 w-5 mr-2" />
+                        Reserva tus Entradas
+                     </Button>
+                   </SheetClose>
                    
                   <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="eventos" className="border-b-0">

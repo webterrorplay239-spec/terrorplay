@@ -31,7 +31,7 @@ export function ParallaxBanner({ title, subtitle, imagePath, imageUrl, dataAiHin
 
   return (
     <section 
-      className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden"
+      className="relative min-h-[50vh] md:min-h-[60vh] w-full overflow-hidden"
       data-ai-hint={dataAiHint}
     >
       <div
@@ -45,7 +45,7 @@ export function ParallaxBanner({ title, subtitle, imagePath, imageUrl, dataAiHin
         <div className="absolute inset-0 bg-black/50" />
       </div>
       
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 text-center">
+      <div className="relative z-10 flex min-h-[50vh] md:min-h-[60vh] flex-col items-center justify-center px-4 text-center">
         {title && (
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
             {title}

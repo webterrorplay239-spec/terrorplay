@@ -1,0 +1,271 @@
+"use client";
+
+import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { MessageSquareQuote, Skull, PartyPopper } from 'lucide-react';
+import { ParallaxBanner } from '@/components/ParallaxBanner';
+import HorrorIntro from '@/components/HorrorIntro';
+import { useEffect, useState } from 'react';
+
+export default function HomeContent() {
+  const [showIntro, setShowIntro] = useState(false);
+
+  useEffect(() => {
+    const hasSeenIntro = sessionStorage.getItem('terrorIntroSeen');
+    if (!hasSeenIntro) {
+      setShowIntro(true);
+      sessionStorage.setItem('terrorIntroSeen', 'true');
+    }
+  }, []);
+  
+  if (showIntro) {
+    return <HorrorIntro onFinished={() => setShowIntro(false)} />;
+  }
+
+  return (
+    <div className="space-y-0">
+      {/* Hero Section */}
+      <ParallaxBanner 
+        imageUrl="/0964ab83-35e1-4b7a-969b-eb4fbc526596.jpg"
+        dataAiHint="dark atmospheric horror"
+      >
+        <div className="relative z-20 text-center flex flex-col items-center justify-center w-full min-h-[calc(100vh-5rem)] py-16 bg-black/70 p-8 animate-fade-in">
+          <Image src="/logo.png" alt="TerrorPlay Logo" width={256} height={256} className="w-48 h-48 md:w-64 md:h-64 animate-pulse object-contain" priority unoptimized />
+          <h1 className="text-5xl md:text-7xl font-horror text-red-600 mb-6 drop-shadow-lg animate-text-flicker">
+            Creamos Eventos de Terror Inolvidables
+          </h1>
+          <p className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto mb-8 drop-shadow-md">
+            Desde pasajes del terror y escape rooms hasta cenas de misterio. 
+            Damos vida a tus peores pesadillas para que disfrutes de una experiencia única.
+          </p>
+          <div className="mt-4 bg-red-950/30 p-4 rounded-lg max-w-2xl">
+            <p className="text-sm text-red-200">
+              Especialistas en crear experiencias terroríficas a medida para eventos,
+              fiestas y celebraciones especiales.
+            </p>
+          </div>
+          <Button 
+            size="lg" 
+            asChild 
+            className="mt-8 bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full shadow-lg transform transition hover:scale-105"
+          >
+            <Link href="/contacto">
+              Solicita tu Presupuesto
+            </Link>
+          </Button>
+        </div>
+      </ParallaxBanner>
+
+      {/* <SectionDivider /> */}
+
+      {/* How it Works Section */}
+      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center bg-scratches rounded-lg">
+        <div className="relative animate-slide-up">
+          <h2 className="text-4xl font-horror text-center text-primary">Cómo lo Hacemos</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Nuestro proceso para garantizar que tu evento de Halloween o fiesta de terror sea perfecta.</p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-8 pt-12">
+          <HowItWorksStep
+            icon={<MessageSquareQuote className="h-12 w-12 text-accent" />}
+            title="1. Cuéntanos tu Idea"
+            description="Contactas con nosotros y nos explicas qué tipo de evento de terror tienes en mente, el público y la localización. ¿Quieres sustos, misterio, o ambos?"
+             animationDelay="0.2s"
+          />
+          <HowItWorksStep
+            icon={<Skull className="h-12 w-12 text-accent" />}
+            title="2. Diseño a Medida"
+            description="Nuestro equipo de creativos diseña una experiencia única para ti, adaptando la historia, los actores y la ambientación a tus necesidades."
+            animationDelay="0.4s"
+          />
+          <HowItWorksStep
+            icon={<PartyPopper className="h-12 w-12 text-accent" />}
+            title="3. Ejecución Impecable"
+            description="Llevamos el terror donde nos pidas. Nos encargamos de todo el montaje, los actores y la producción para que solo te preocupes de gritar."
+            animationDelay="0.6s"
+          />
+        </div>
+      </section>
+
+      {/* <SectionDivider /> */}
+
+      {/* Our Events Section */}
+      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
+        <div className="relative animate-slide-up">
+            <h2 className="text-4xl font-horror text-red-600 text-center mb-4">Nuestros Eventos de Terror</h2>
+            <p className="text-lg text-foreground max-w-3xl mx-auto">Desde experiencias extremas hasta juegos de misterio, tenemos el evento perfecto para cada tipo de público y ocasión.</p>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-12 max-w-6xl mx-auto">
+          <EventCard
+            imageSrc="/78042.jpg"
+            imageHint="extreme house terror"
+            title="Extreme House"
+            description="La experiencia de terror definitiva. Adéntrate en un mundo de pesadilla donde tus peores miedos cobran vida. No apto para sensibles."
+            href="/eventos/extreme-house"
+            animationDelay="0.2s"
+          />
+          <EventCard
+            imageSrc="/229f6432-7b10-4354-ad95-9103e3bcdb4a.jpg"
+            imageHint="haunted house passage"
+            title="Pasajes del Terror"
+            description="Recorridos inmersivos llenos de sustos, actores y efectos especiales. Ideal para fiestas de Halloween, ayuntamientos y centros comerciales."
+            href="/eventos/pasajes-del-terror"
+            animationDelay="0.3s"
+          />
+          <EventCard
+            imageSrc="/bd8f6f72-46e5-4169-adef-4ed8af1de77e.jpg"
+            imageHint="escape room dark"
+            title="Escape Rooms Temáticos"
+            description="Nuestros game masters os guiarán (o atormentarán) a través de un misterio que deberéis resolver antes de que sea tarde. Experiencias portátiles."
+            href="/eventos/escape-rooms"
+            animationDelay="0.4s"
+          />
+          <EventCard
+            imageSrc="/Gemini_Generated_Image_vlzx92vlzx92vlzx.png"
+            imageHint="murder mystery dinner"
+            title="Cenas de Misterio"
+            description="Una cena donde nada es lo que parece y uno de los comensales es un asesino. Perfecto para eventos de empresa y grupos que buscan algo original."
+            href="/eventos/cenas-de-misterio"
+            animationDelay="0.5s"
+          />
+          <EventCard
+            imageSrc="/ojos-de-zombi-de-cerca.jpg"
+            imageHint="zombie survival outdoor"
+            title="Real Games y Zombies"
+            description="Eventos a gran escala en pueblos, fincas o grandes recintos. Misiones, hordas de infectados y horas de pura adrenalina para grupos grandes."
+            href="/eventos/real-games"
+            animationDelay="0.6s"
+          />
+        </div>
+        <div className="pt-10">
+          <Button asChild variant="outline" size="lg" className="border-primary/60 hover:bg-primary/10">
+            <Link href="/eventos">Ver todos los eventos</Link>
+          </Button>
+        </div>
+      </section>
+      
+      {/* <SectionDivider /> */}
+
+      {/* Testimonials Section */}
+      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
+         <div className="relative animate-slide-up">
+            <h2 className="text-4xl font-horror text-center text-primary">Opiniones de Nuestros Clientes</h2>
+         </div>
+         <div className="grid md:grid-cols-2 gap-8 pt-12 max-w-4xl mx-auto">
+            <TestimonialCard
+              quote="¡Increíble! Montaron un pasaje del terror para nuestra fiesta de Halloween y fue un éxito rotundo. Los actores eran de 10."
+              author="Laura G. - Evento Privado"
+              animationDelay="0.2s"
+            />
+            <TestimonialCard
+              quote="La cena de misterio para nuestro team building fue genial. Muy bien organizada y divertida. ¡Repetiremos seguro!"
+              author="Carlos M. - Empresa Tech"
+              animationDelay="0.4s"
+            />
+         </div>
+      </section>
+
+      {/* <SectionDivider /> */}
+
+      {/* Final CTA Section */}
+      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center bg-scratches my-12 rounded-lg shadow-xl animate-slide-up">
+          <h3 className="text-3xl font-horror text-primary mb-4">¿Hablamos de tu Próximo Evento de Terror?</h3>
+          <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+            Estamos listos para hacer realidad tus pesadillas. Contacta con nosotros y pide un presupuesto sin compromiso para tu fiesta de Halloween, evento de empresa o celebración.
+          </p>
+          <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Link href="/contacto">Contactar</Link>
+          </Button>
+      </section>
+    </div>
+  );
+}
+
+function SectionDivider() {
+    return (
+        <div className="relative h-20 bg-transparent">
+             <div className="absolute inset-0 bg-gradient-to-b from-background to-transparent z-10"></div>
+             <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10"></div>
+            <svg className="absolute inset-0 w-full h-full text-primary" viewBox="0 0 100 10" preserveAspectRatio="none">
+                <path d="M0 5 Q 15 10, 30 5 T 70 5 Q 85 10, 100 5" stroke="currentColor" strokeWidth="0.2" fill="none" />
+                 <path d="M0 6 Q 20 0, 45 6 T 100 6" stroke="hsl(var(--accent))" strokeWidth="0.1" fill="none" opacity="0.5" />
+            </svg>
+        </div>
+    )
+}
+
+interface HowItWorksStepProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  animationDelay?: string;
+}
+
+function HowItWorksStep({ icon, title, description, animationDelay }: HowItWorksStepProps) {
+  return (
+    <div className="flex flex-col items-center space-y-3 p-4 rounded-lg transition-all duration-300 hover:bg-card/50 animate-slide-up" style={{ animationDelay }}>
+      <div className="p-4 bg-card rounded-full">{icon}</div>
+      <h3 className="text-2xl font-horror">{title}</h3>
+      <p className="text-muted-foreground">{description}</p>
+    </div>
+  );
+}
+
+interface EventCardProps {
+  imageSrc: string;
+  imageHint: string;
+  title: string;
+  description: string;
+  href: string;
+  animationDelay?: string;
+}
+
+function EventCard({ imageSrc, imageHint, title, description, href, animationDelay }: EventCardProps) {
+  return (
+    <Link href={href}>
+      <Card className="text-left overflow-hidden transform transition-transform hover:scale-105 duration-300 bg-scratches border-border/50 group animate-slide-up cursor-pointer" style={{ animationDelay }}>
+        <div className="relative overflow-hidden">
+          <Image 
+            src={imageSrc}
+            width={600}
+            height={400}
+            alt={title}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110 group-hover:blur-sm group-hover:brightness-50"
+            data-ai-hint={imageHint}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-glitch">
+          </div>
+        </div>
+        <CardHeader>
+          <CardTitle className="font-horror text-2xl text-red-600">{title}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-foreground">{description}</p>
+        </CardContent>
+      </Card>
+    </Link>
+  );
+}
+
+interface TestimonialCardProps {
+  quote: string;
+  author: string;
+  animationDelay?: string;
+}
+
+function TestimonialCard({ quote, author, animationDelay }: TestimonialCardProps) {
+    return (
+        <Card className="bg-scratches p-6 text-left border-border/50 animate-slide-up" style={{ animationDelay }}>
+            <CardContent className="p-0 space-y-4">
+                <MessageSquareQuote className="w-8 h-8 text-accent" />
+                <blockquote className="text-lg italic border-l-4 border-accent pl-4">
+                    {quote}
+                </blockquote>
+                <p className="text-right font-horror text-primary">— {author}</p>
+            </CardContent>
+        </Card>
+    )
+}
