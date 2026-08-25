@@ -12,6 +12,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Send } from 'lucide-react';
 import { sendContactEmail } from '@/app/actions/send-contact-email';
+import { CONTACT_EMAIL } from '@/lib/site';
 import { useState } from 'react';
 
 const contactSchema = z.object({
@@ -59,7 +60,7 @@ export default function ContactoContent() {
        toast({
         variant: "destructive",
         title: "Error al enviar el mensaje",
-        description: "No hemos podido enviar tu mensaje. Escríbenos a info@goodparty.es o por WhatsApp y lo solucionamos.",
+        description: `No hemos podido enviar tu mensaje. Escríbenos a ${CONTACT_EMAIL} o por WhatsApp y lo solucionamos.`,
        });
     } finally {
       setIsSubmitting(false);
