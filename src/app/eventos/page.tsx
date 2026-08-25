@@ -11,13 +11,25 @@ export const metadata: Metadata = {
   alternates: { canonical: '/eventos' },
 };
 
-const eventServices = [
+type EventService = {
+  icon: typeof Skull;
+  title: string;
+  description: string;
+  imageSrc: string;
+  imageHint: string;
+  href: string;
+  /** Encuadre del recorte, para fotos verticales donde el centro no es lo interesante. */
+  imagePosition?: string;
+};
+
+const eventServices: EventService[] = [
   {
     icon: Skull,
     title: "Extreme House",
     description: "La experiencia de terror definitiva, solo para mayores de 18 años. Grupos reducidos, 45 minutos y actores entrenados para llevarte al límite de tu resistencia. No apto para sensibles.",
-    imageSrc: "/78042.jpg",
+    imageSrc: "/070b0295-4015-4c2c-88d2-eb7f50120fa1.jpg",
     imageHint: "extreme house terror",
+    imagePosition: "object-top",
     href: "/eventos/extreme-house",
   },
   {
@@ -26,6 +38,7 @@ const eventServices = [
     description: "Diseñamos y montamos pasajes del terror a medida para todo tipo de públicos y espacios: fiestas privadas, eventos de empresa, ayuntamientos, centros comerciales y más. Nos encargamos de la escenografía, actores, efectos especiales y sonido.",
     imageSrc: "/229f6432-7b10-4354-ad95-9103e3bcdb4a.jpg",
     imageHint: "haunted house passage interior",
+    imagePosition: "object-top",
     href: "/eventos/pasajes-del-terror",
   },
   {
@@ -76,7 +89,7 @@ export default function EventosPage() {
                     width={600}
                     height={400}
                     alt={service.title}
-                    className="w-full h-64 md:h-full object-cover transition-transform duration-500 hover:scale-105"
+                    className={`w-full h-64 md:h-full object-cover ${service.imagePosition ?? 'object-center'} transition-transform duration-500 hover:scale-105`}
                     sizes="(max-width: 768px) 100vw, 40vw"
                     data-ai-hint={service.imageHint}
                   />
