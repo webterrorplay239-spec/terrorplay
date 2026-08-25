@@ -1,6 +1,13 @@
-"use client";
-
 import { ParallaxBanner } from "@/components/ParallaxBanner";
+
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Política de Cookies',
+  description: 'Información sobre las cookies que utiliza la web de TerrorPlay y cómo gestionarlas.',
+  alternates: { canonical: '/cookies' },
+  robots: { index: false, follow: true },
+};
 
 export default function CookiesPage() {
   return (

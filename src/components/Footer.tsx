@@ -3,23 +3,14 @@ import Image from "next/image";
 import { Facebook, Instagram, Twitter } from "lucide-react";
 import { Button } from "./ui/button";
 
+// TODO: pon aquí las URLs reales de los perfiles.
+// Las entradas con href vacío no se muestran (mejor ningún icono que uno
+// que lleve a la portada genérica de la red social).
 const socialLinks = [
-  {
-    name: "Instagram",
-    href: "https://instagram.com",
-    icon: Instagram,
-  },
-  {
-    name: "Facebook",
-    href: "https://facebook.com",
-    icon: Facebook,
-  },
-  {
-    name: "Twitter / X",
-    href: "https://x.com",
-    icon: Twitter,
-  },
-];
+  { name: "Instagram", href: "", icon: Instagram },
+  { name: "Facebook", href: "", icon: Facebook },
+  { name: "Twitter / X", href: "", icon: Twitter },
+].filter((social) => social.href !== "");
 
 
 export default function Footer() {

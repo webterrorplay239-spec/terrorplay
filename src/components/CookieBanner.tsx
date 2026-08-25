@@ -4,19 +4,43 @@ import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 
+export const COOKIE_CHOICE_KEY = "cookiesChoice";
+
+/**
+ * Devuelve true si el usuario ha aceptado las cookies no esenciales.
+ * Úsalo como condición antes de cargar Analytics, píxeles o cualquier
+ * script de terceros.
+ */
+export function hasAcceptedCookies(): boolean {
+  try {
+    return localStorage.getItem(COOKIE_CHOICE_KEY) === "accepted";
+  } catch {
+    return false;
+  }
+}
+
 export function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Comprobar si el usuario ya ha aceptado las cookies
-    const hasAcceptedCookies = localStorage.getItem("cookiesAccepted");
-    if (!hasAcceptedCookies) {
+    // El banner solo se muestra si el usuario aún no ha decidido nada.
+    try {
+      const choice = localStorage.getItem(COOKIE_CHOICE_KEY);
+      if (choice !== "accepted" && choice !== "rejected") {
+        setIsVisible(true);
+      }
+    } catch {
+      // Modo incógnito o almacenamiento bloqueado: mostramos el banner igualmente.
       setIsVisible(true);
     }
   }, []);
 
-  const acceptCookies = () => {
-    localStorage.setItem("cookiesAccepted", "true");
+  const saveChoice = (choice: "accepted" | "rejected") => {
+    try {
+      localStorage.setItem(COOKIE_CHOICE_KEY, choice);
+    } catch {
+      // Si no se puede guardar, al menos ocultamos el banner en esta visita.
+    }
     setIsVisible(false);
   };
 
@@ -35,14 +59,14 @@ export function CookieBanner() {
           <Button
             variant="outline"
             className="text-xs"
-            onClick={() => setIsVisible(false)}
+            onClick={() => saveChoice("rejected")}
           >
             Rechazar
           </Button>
           <Button 
             variant="default"
             className="text-xs bg-primary hover:bg-primary/80"
-            onClick={acceptCookies}
+            onClick={() => saveChoice("accepted")}
           >
             Aceptar cookies
           </Button>

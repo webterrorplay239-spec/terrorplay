@@ -8,6 +8,7 @@ import { Puzzle, MessageSquareQuote, Skull, PartyPopper } from 'lucide-react';
 export const metadata = {
   title: 'Escape Rooms de Terror Portátiles y a Medida - TerrorPlay',
   description: 'Creamos escape rooms de terror inmersivos y portátiles para eventos, fiestas y team building. Puzzles, misterio y sustos garantizados. ¿Podrás escapar?',
+  alternates: { canonical: '/eventos/escape-rooms' },
 };
 
 export default function EscapeRoomsPage() {
@@ -17,7 +18,7 @@ export default function EscapeRoomsPage() {
         imageUrl="/bd8f6f72-46e5-4169-adef-4ed8af1de77e.jpg" 
         dataAiHint="dark escape room door"
       >
-        <div className="relative z-20 text-center flex flex-col items-center justify-center h-screen min-h-[600px] bg-black/70 p-8 animate-fade-in">
+        <div className="relative z-20 text-center flex flex-col items-center justify-center w-full min-h-[calc(100vh-5rem)] py-16 bg-black/70 p-8 animate-fade-in">
           <Puzzle className="h-24 w-24 text-accent mb-4" />
           <h1 className="text-5xl md:text-7xl font-horror text-red-600 mb-6 drop-shadow-lg animate-text-flicker">
             Escape Rooms de Terror
@@ -50,7 +51,7 @@ export default function EscapeRoomsPage() {
 
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
         <div className="relative animate-slide-up">
-          <h2 className="text-4xl font-['Lacquer',_cursive] text-center text-primary">¿Cómo Funciona un Escape Room Portátil?</h2>
+          <h2 className="text-4xl font-horror text-center text-primary">¿Cómo Funciona un Escape Room Portátil?</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Llevamos el terror y el misterio a la localización que tú elijas.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8 pt-12">
@@ -79,7 +80,7 @@ export default function EscapeRoomsPage() {
       
        <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
          <div className="relative animate-slide-up">
-            <h2 className="text-4xl font-['Lacquer',_cursive] text-center text-primary">Opiniones de Nuestros Detectives</h2>
+            <h2 className="text-4xl font-horror text-center text-primary">Opiniones de Nuestros Detectives</h2>
          </div>
          <div className="grid md:grid-cols-2 gap-8 pt-12 max-w-4xl mx-auto">
             <TestimonialCard
@@ -98,7 +99,7 @@ export default function EscapeRoomsPage() {
       <SectionDivider />
 
        <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center bg-scratches my-12 rounded-lg shadow-xl animate-slide-up">
-          <h3 className="text-3xl font-['Lacquer',_cursive] text-primary mb-4">¿Te Atreves a Enfrentarte al Desafío?</h3>
+          <h3 className="text-3xl font-horror text-primary mb-4">¿Te Atreves a Enfrentarte al Desafío?</h3>
           <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
             Ideal para grupos, empresas y cualquiera que busque una actividad original. Pide presupuesto para tu escape room de terror a medida.
           </p>
@@ -135,7 +136,7 @@ function HowItWorksStep({ icon, title, description, animationDelay }: HowItWorks
   return (
     <div className="flex flex-col items-center space-y-3 p-4 rounded-lg transition-all duration-300 hover:bg-card/50 animate-slide-up" style={{ animationDelay }}>
       <div className="p-4 bg-card rounded-full">{icon}</div>
-      <h3 className="text-2xl font-['Lacquer',_cursive]">{title}</h3>
+      <h3 className="text-2xl font-horror">{title}</h3>
       <p className="text-muted-foreground">{description}</p>
     </div>
   );
@@ -155,7 +156,7 @@ function TestimonialCard({ quote, author, animationDelay }: TestimonialCardProps
                 <blockquote className="text-lg italic border-l-4 border-accent pl-4">
                     {quote}
                 </blockquote>
-                <p className="text-right font-['Lacquer',_cursive] text-primary">— {author}</p>
+                <p className="text-right font-horror text-primary">— {author}</p>
             </CardContent>
         </Card>
     )

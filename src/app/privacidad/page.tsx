@@ -1,6 +1,13 @@
-"use client";
-
 import { ParallaxBanner } from "@/components/ParallaxBanner";
+
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Política de Privacidad',
+  description: 'Cómo tratamos tus datos personales cuando contactas con TerrorPlay: responsable, finalidad, base legal y derechos.',
+  alternates: { canonical: '/privacidad' },
+  robots: { index: false, follow: true },
+};
 
 export default function PrivacidadPage() {
   return (
@@ -21,7 +28,7 @@ export default function PrivacidadPage() {
           <h3 className="text-xl font-bold mb-4">1. ¿QUIÉN ES RESPONSABLE DE SUS DATOS?</h3>
           <ul>
             <li>Identidad: M. Pilar Barradas, con nif: 48656935K</li>
-            <li>Domicilio: Calle José Rodríguez Rodri 41980 La Algaba (Sevilla)</li>
+            <li>Domicilio: Calle José Rodríguez Rodri, 37 – 41980 La Algaba (Sevilla)</li>
             <li>Teléfono de contacto: 653 336 695</li>
             <li>Dirección de correo electrónico: info@goodparty.es</li>
           </ul>
@@ -70,7 +77,7 @@ export default function PrivacidadPage() {
             <li>Derecho a no ser objeto de decisiones individuales automatizadas</li>
           </ul>
           <p className="mt-4">
-            Los interesados podrán ejercer sus derechos bien presencialmente, en Calle José Rodríguez Rodri 37 41980 La Algaba (Sevilla). Igualmente, podrá hacerlo a través de la siguiente dirección de correo electrónico: info@goodparty.es
+            Los interesados podrán ejercer sus derechos bien presencialmente, en Calle José Rodríguez Rodri, 37 – 41980 La Algaba (Sevilla). Igualmente, podrá hacerlo a través de la siguiente dirección de correo electrónico: info@goodparty.es
           </p>
         </section>
       </div>
