@@ -98,8 +98,9 @@ export default function HomeContent() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-12 max-w-6xl mx-auto">
           <EventCard
-            imageSrc="/78042.jpg"
+            imageSrc="/070b0295-4015-4c2c-88d2-eb7f50120fa1.jpg"
             imageHint="extreme house terror"
+            imagePosition="object-top"
             title="Extreme House"
             description="La experiencia de terror definitiva. Adéntrate en un mundo de pesadilla donde tus peores miedos cobran vida. No apto para sensibles."
             href="/eventos/extreme-house"
@@ -108,6 +109,7 @@ export default function HomeContent() {
           <EventCard
             imageSrc="/229f6432-7b10-4354-ad95-9103e3bcdb4a.jpg"
             imageHint="haunted house passage"
+            imagePosition="object-top"
             title="Pasajes del Terror"
             description="Recorridos inmersivos llenos de sustos, actores y efectos especiales. Ideal para fiestas de Halloween, ayuntamientos y centros comerciales."
             href="/eventos/pasajes-del-terror"
@@ -219,9 +221,11 @@ interface EventCardProps {
   description: string;
   href: string;
   animationDelay?: string;
+  /** Encuadre del recorte, para fotos verticales donde el centro no es lo interesante. */
+  imagePosition?: string;
 }
 
-function EventCard({ imageSrc, imageHint, title, description, href, animationDelay }: EventCardProps) {
+function EventCard({ imageSrc, imageHint, title, description, href, animationDelay, imagePosition = 'object-center' }: EventCardProps) {
   return (
     <Link href={href}>
       <Card className="text-left overflow-hidden transform transition-transform hover:scale-105 duration-300 bg-scratches border-border/50 group animate-slide-up cursor-pointer" style={{ animationDelay }}>
@@ -232,7 +236,7 @@ function EventCard({ imageSrc, imageHint, title, description, href, animationDel
             height={400}
             alt={title}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110 group-hover:blur-sm group-hover:brightness-50"
+            className={`w-full h-48 object-cover ${imagePosition} transition-all duration-500 group-hover:scale-110 group-hover:blur-sm group-hover:brightness-50`}
             data-ai-hint={imageHint}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
